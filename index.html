@@ -76,14 +76,14 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="index.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
   $$\newcommand{\sbn}{\stackrel{null}{<:}}$$
   
-  <script src="./js/index.js"></script>
+  <script src="./index.js"></script>
 </head>
 <body>
 <header>
@@ -1977,6 +1977,7 @@ TODO(Inner vs nested contexts)</li>
 <p>When used as expressions, conditional expressions are special in the sense of operator precedence: they have the highest (same as all primary expressions) priority when placed on the right side of any binary expression, but when placed on the left side, they have the lowest priority. For details, see the <a href="#syntax-grammar">grammar</a></p>
 </blockquote>
 <h3 id="when-expression">When expression</h3>
+<div class="paragraph">
 <dl>
 <dt><strong><em>whenExpression</em>:</strong></dt>
 <dd><code>when</code> {<em>NL</em>} [<code>(</code> <em>expression</em> <code>)</code>] {<em>NL</em>} <code>{</code> {<em>NL</em>} {<em>whenEntry</em> {<em>NL</em>}} {<em>NL</em>} <code>}</code>
@@ -1997,6 +1998,7 @@ TODO(Inner vs nested contexts)</li>
 <dd><em>isOperator</em> {<em>NL</em>} <em>type</em>
 </dd>
 </dl>
+</div>
 <div class="paragraph">
 <p><span class="sentence"><strong>When expression</strong> is alike a <strong>conditional expression</strong> in the sense that it allows several different control structure bodies (<em>cases</em>) to be evaluated depending on boolean conditions.</span> <span class="sentence">The key difference, however, is that when expressions may include several different conditions.</span> <span class="sentence">When expression has two different forms: with bound value and without it.</span></p>
 </div>
@@ -2013,7 +2015,7 @@ TODO(Inner vs nested contexts)</li>
 <p><span class="sentence"><strong>When expression with bound value</strong> (the form where the expression enclosed in parantheses is present) are very similar to the form without bound value, but use different syntax for conditions.</span> <span class="sentence">In fact, it supports three different condition forms:</span></p>
 <ul>
 <li><span class="sentence"><em>Type test condition</em>: type checking operator [TODO: link] followed by type. The condition generated is a type check expression [TODO: link] with the same operator and the same type, but an implicit left hand side, which has the same value as the bound expression.</span></li>
-<li><span class="sentence"><em>Contains test condition</em>: containment operator [TODO: link] followed by an expression;</span> <span class="sentence">The condition generated is a containment check expression [TODO: link] with the same operator and the same right hand side expression, but an implicit left hand side, which has the same value as the bound expression.</span></li>
+<li><span class="sentence"><em>Contains test condition</em>: containment operator [TODO: link] followed by an expression; The condition generated is a containment check expression [TODO: link] with the same operator and the same right hand side expression, but an implicit left hand side, which has the same value as the bound expression.</span></li>
 <li><span class="sentence"><em>Any other expression</em>. The condition generated is an equality operator [TODO: link], with the left hand side being the bound expression, and the right hand side being the expression placed inside the entry.</span></li>
 <li><span class="sentence">The <code>else</code> condition, which works the exact same way as it would in the form without bound expression.</span></li>
 </ul>
