@@ -41,7 +41,7 @@ function highlightSentence(hashComponents) {
     }
 }
 
-function showSentenceCoverage(sentenceElement, sentenceTestInfo) {
+function showSentenceCoverage(sentenceElement, sentenceTestInfo, sentenceNumber, paragraphNumber) {
     sentenceElement.setAttribute("data-d", "4");
     sentenceElement.style.background = "rgb(213, 236, 206)";
     sentenceElement.style.borderRadius = "5px";
@@ -75,7 +75,7 @@ function showSentenceCoverage(sentenceElement, sentenceTestInfo) {
 
     var span = document.createElement("span");
     span.setAttribute("class", "coverage-info");
-    span.innerHTML = testsByArea.join("<br />");
+    span.innerHTML = "<span style=\"text-align: center; font-weight: bold; display: block;\">Paragraph " + paragraphNumber + ", sentence " + sentenceNumber + "</span>" + testsByArea.join("<br />");
     sentenceElement.prepend(span);
 }
 
@@ -104,7 +104,7 @@ function showCoverage(specTestsMap) {
 
                 Array.from(sentenceElements).forEach(function(sentenceElement) {
                     if (sentenceCounter in sentenceObject) {
-                        showSentenceCoverage(sentenceElement, sentenceObject[sentenceCounter]);
+                        showSentenceCoverage(sentenceElement, sentenceObject[sentenceCounter], sentenceCounter, paragraphCounter);
                     } else {
                         markSentenceNotCovered(sentenceElement);
                     }
