@@ -70,7 +70,7 @@ function showSentenceCoverage(sentenceElement, sentenceTestInfo) {
         for (var testNumberInfo in testNumberByType) {
             testNumberByTypeInfo.push(testNumberInfo + " — " + testNumberByType[testNumberInfo]);
         }
-        testsByArea.push(area.toLocaleUpperCase() + ": " + (testNumberByTypeInfo.length > 0 ? testNumberByTypeInfo.join(", ") : "does not contain"));
+        testsByArea.push("<b>" + area.toLocaleUpperCase() + "</b>: " + (testNumberByTypeInfo.length > 0 ? testNumberByTypeInfo.join(", ") : "does not contain"));
     }
 
     var span = document.createElement("span");
