@@ -331,9 +331,21 @@ table td {
   }
 }
 
+.paragraph {
+    border: 3px solid rgb(255, 195, 195);
+    border-radius: 7px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: calc(100% + 26px);
+    margin-left: -13px;
+    margin-top: 20px;
+}
 
 .sentence {
     position: relative;
+    padding: 0 5px;
+    border-right: 3px solid rgba(255, 0, 0, .5);
+    border-left: 3px solid rgba(255, 0, 0, .5);
 }
 
 .sentence .coverage-info {
@@ -352,6 +364,7 @@ table td {
     transition: opacity 0.3s;
     font-size: 12px;
     font-family: 'Arial', sans-serif;
+    font-weight: bold;
 }
 
 .sentence .coverage-info::after {
@@ -368,4 +381,23 @@ table td {
 .sentence:hover .coverage-info {
     visibility: visible;
     opacity: 1;
+}
+
+.sentence > .number-info {
+    font-weight: bold;
+    border-right: 3px solid rgba(255, 0, 0, .5);
+    padding: 0px 6px 0px 3px;
+    margin-right: 5px;
+    line-height: 18px;
+    display: inline-block;
+}
+
+.paragraph > .number-info {
+    position: absolute;
+    margin-top: -27px;
+    margin-left: -27px;
+    background: #fff;
+    padding: 0 10px;
+    border-radius: 20px;
+    border: 1px solid #969696;
 }

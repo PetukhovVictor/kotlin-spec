@@ -52,8 +52,6 @@ function showSentenceCoverage(sentenceElement, sentenceTestInfo, sentenceNumber,
         }
     });
 
-    console.log(sentenceTestInfo);
-
     var testsByArea = [];
 
     for (var area in sentenceTestInfo) {
@@ -70,18 +68,31 @@ function showSentenceCoverage(sentenceElement, sentenceTestInfo, sentenceNumber,
         for (var testNumberInfo in testNumberByType) {
             testNumberByTypeInfo.push(testNumberInfo + " — " + testNumberByType[testNumberInfo]);
         }
-        testsByArea.push("<b>" + area.toLocaleUpperCase() + "</b>: " + (testNumberByTypeInfo.length > 0 ? testNumberByTypeInfo.join(", ") : "does not contain"));
+        if (testNumberByTypeInfo.length > 0) {
+            testsByArea.push("<b>" + area.toLocaleUpperCase() + "</b>: " + testNumberByTypeInfo.join(", "));
+        }
     }
 
-    var span = document.createElement("span");
-    span.setAttribute("class", "coverage-info");
-    span.innerHTML = "<span style=\"text-align: center; font-weight: bold; display: block;\">Paragraph " + paragraphNumber + ", sentence " + sentenceNumber + "</span>" + testsByArea.join("<br />");
-    sentenceElement.prepend(span);
+    var coverageInfoSpan = document.createElement("span");
+    coverageInfoSpan.setAttribute("class", "coverage-info");
+    coverageInfoSpan.innerHTML = testsByArea.join("<br />");
+    sentenceElement.prepend(coverageInfoSpan);
+
+    addNumberInfo(sentenceElement, sentenceNumber);
 }
 
-function markSentenceNotCovered(sentenceElement) {
+function addNumberInfo(sentenceElement, sentenceNumber) {
+    var numberInfoSpan = document.createElement("span");
+    numberInfoSpan.setAttribute("class", "number-info");
+    numberInfoSpan.innerHTML = sentenceNumber;
+    sentenceElement.prepend(numberInfoSpan);
+}
+
+function markSentenceNotCovered(sentenceElement, sentenceNumber) {
     sentenceElement.style.background = "rgb(255, 195, 195)";
     sentenceElement.style.borderRadius = "5px";
+
+    addNumberInfo(sentenceElement, sentenceNumber);
 }
 
 function showCoverage(specTestsMap) {
@@ -97,7 +108,9 @@ function showCoverage(specTestsMap) {
         var paragraphCounter = 0;
 
         while (nextSibling) {
-            if (nextSibling.classList && nextSibling.classList.contains("paragraph") && ++paragraphCounter in paragraphs) {
+            var isParagraph = nextSibling.classList && nextSibling.classList.contains("paragraph");
+
+            if (isParagraph && ++paragraphCounter in paragraphs) {
                 var sentenceElements = nextSibling.getElementsByClassName("sentence");
                 var sentenceObject = paragraphs[paragraphCounter];
                 var sentenceCounter = 1;
@@ -106,15 +119,15 @@ function showCoverage(specTestsMap) {
                     if (sentenceCounter in sentenceObject) {
                         showSentenceCoverage(sentenceElement, sentenceObject[sentenceCounter], sentenceCounter, paragraphCounter);
                     } else {
-                        markSentenceNotCovered(sentenceElement);
+                        markSentenceNotCovered(sentenceElement, sentenceCounter);
                     }
                     sentenceCounter++;
                 });
             }
+            if (isParagraph)
+                addNumberInfo(nextSibling, paragraphCounter);
             nextSibling = nextSibling.nextSibling;
         }
-
-        console.log(specTestsMap[section]);
     }
 }
 
