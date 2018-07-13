@@ -138,5 +138,6 @@ window.addEventListener("DOMContentLoaded", function(event) {
 
     if (getQueryParam("mode") == "view_tests_coverage") {
         loadJSON("./specTestsMap.json", showCoverage);
+        document.body.classList.add("view-tests-coverage");
     }
 });

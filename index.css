@@ -331,7 +331,7 @@ table td {
   }
 }
 
-.paragraph {
+body.view-tests-coverage .paragraph {
     border: 3px solid rgb(255, 195, 195);
     border-radius: 7px;
     padding: 10px;
@@ -341,14 +341,14 @@ table td {
     margin-top: 20px;
 }
 
-.sentence {
+body.view-tests-coverage .sentence {
     position: relative;
     padding: 0 5px;
     border-right: 3px solid rgba(255, 0, 0, .5);
     border-left: 3px solid rgba(255, 0, 0, .5);
 }
 
-.sentence .coverage-info {
+body.view-tests-coverage .sentence .coverage-info {
     visibility: hidden;
     width: 350px;
     background-color: #555;
@@ -367,7 +367,7 @@ table td {
     font-weight: bold;
 }
 
-.sentence .coverage-info::after {
+body.view-tests-coverage .sentence .coverage-info::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -378,12 +378,12 @@ table td {
     border-color: #555 transparent transparent transparent;
 }
 
-.sentence:hover .coverage-info {
+body.view-tests-coverage .sentence:hover .coverage-info {
     visibility: visible;
     opacity: 1;
 }
 
-.sentence > .number-info {
+body.view-tests-coverage .sentence > .number-info {
     font-weight: bold;
     border-right: 3px solid rgba(255, 0, 0, .5);
     padding: 0px 6px 0px 3px;
@@ -392,7 +392,7 @@ table td {
     display: inline-block;
 }
 
-.paragraph > .number-info {
+body.view-tests-coverage .paragraph > .number-info {
     position: absolute;
     margin-top: -27px;
     margin-left: -27px;
