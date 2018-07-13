@@ -331,6 +331,10 @@ table td {
   }
 }
 
+body.view-tests-coverage {
+    padding: 0 30px;
+}
+
 body.view-tests-coverage .paragraph {
     border: 3px solid rgb(255, 195, 195);
     border-radius: 7px;
