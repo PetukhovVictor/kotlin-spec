@@ -13,13 +13,12 @@ function loadJSON(url, callback) {
     request.overrideMimeType("application/json");
     request.open("GET", url, true);
     request.onreadystatechange = function () {
-        if (request.readyState == 4 && request.status == "200") {
+        if (request.readyState === 4 && request.status === 200) {
             callback(JSON.parse(request.responseText));
         }
     };
     request.send(null);
- }
-
+}
 
 function highlightSentence(hashComponents) {
     var section = hashComponents[0];
@@ -55,16 +54,16 @@ function showSentenceCoverage(sentenceElement, sentenceTestInfo, sentenceNumber,
     var testsByArea = [];
 
     for (var area in sentenceTestInfo) {
-        var testNumberByType = {}
+        var testNumberByType = {};
         for (var testType in sentenceTestInfo[area]) {
-            var testCasesNumber = 0
+            var testCasesNumber = 0;
             for (var test in sentenceTestInfo[area][testType]) {
                 testCasesNumber += sentenceTestInfo[area][testType][test].cases.length;
             }
             var testNumber = Object.keys(sentenceTestInfo[area][testType]).length;
             testNumberByType[testType] = testNumber + " (cases: " + testCasesNumber + ")";
         }
-        var testNumberByTypeInfo = []
+        var testNumberByTypeInfo = [];
         for (var testNumberInfo in testNumberByType) {
             testNumberByTypeInfo.push(testNumberInfo + " — " + testNumberByType[testNumberInfo]);
         }
@@ -85,7 +84,8 @@ function addNumberInfo(sentenceElement, sentenceNumber) {
     var numberInfoSpan = document.createElement("span");
     numberInfoSpan.setAttribute("class", "number-info");
     numberInfoSpan.innerHTML = sentenceNumber;
-    sentenceElement.prepend(numberInfoSpan);
+    sentenceElement.insertBefore(numberInfoSpan, sentenceElement.firstChild);
+    sentenceElement.classList.add(sentenceNumber);
 }
 
 function markSentenceNotCovered(sentenceElement, sentenceNumber) {
@@ -96,39 +96,47 @@ function markSentenceNotCovered(sentenceElement, sentenceNumber) {
 }
 
 function showCoverage(specTestsMap) {
-    for (var section in specTestsMap) {
-        var paragraphs = specTestsMap[section];
-        var sectionElement = document.querySelector("#" + section);
+    // for (var section in specTestsMap) {
+    //     var paragraphs = specTestsMap[section];
+    var sections = document.querySelectorAll("h3");
 
-        if (sectionElement == null) {
-            continue
-        }
+    Array.from(sections).forEach(function(sectionElement) {
+        // if (sectionElement == null) {
+        //     continue
+        // }
 
         var nextSibling = sectionElement.nextElementSibling;
         var paragraphCounter = 0;
 
         while (nextSibling) {
-            var isParagraph = nextSibling.classList && nextSibling.classList.contains("paragraph");
+            var isNewSection = nextSibling.tagName === "H3";
+            if (isNewSection) break;
 
-            if (isParagraph && ++paragraphCounter in paragraphs) {
-                var sentenceElements = nextSibling.getElementsByClassName("sentence");
-                var sentenceObject = paragraphs[paragraphCounter];
+            var isParagraph = nextSibling.classList && (nextSibling.classList.contains("paragraph") || nextSibling.tagName === "DL" || nextSibling.tagName === "UL" || nextSibling.tagName === "BLOCKQUOTE");
+            if (isParagraph) { //  && ++paragraphCounter in paragraphs
+                paragraphCounter++;
+
+                var sentenceElements = nextSibling.querySelectorAll(".sentence");
+                // var sentenceObject = paragraphs[paragraphCounter];
                 var sentenceCounter = 1;
 
                 Array.from(sentenceElements).forEach(function(sentenceElement) {
-                    if (sentenceCounter in sentenceObject) {
-                        showSentenceCoverage(sentenceElement, sentenceObject[sentenceCounter], sentenceCounter, paragraphCounter);
-                    } else {
+                    // if (sentenceCounter in sentenceObject) {
+                    //     showSentenceCoverage(sentenceElement, sentenceObject[sentenceCounter], sentenceCounter, paragraphCounter);
+                    // } else {
                         markSentenceNotCovered(sentenceElement, sentenceCounter);
-                    }
+                    // }
                     sentenceCounter++;
                 });
-            }
-            if (isParagraph)
+                if (nextSibling.attributes.getNamedItem("id") && nextSibling.attributes.getNamedItem("id").value === "adfad") {
+                    console.log("!!!");
+                    console.log(paragraphCounter);
+                }
                 addNumberInfo(nextSibling, paragraphCounter);
+            }
             nextSibling = nextSibling.nextSibling;
         }
-    }
+    })
 }
 
 window.addEventListener("DOMContentLoaded", function(event) {
@@ -136,7 +144,7 @@ window.addEventListener("DOMContentLoaded", function(event) {
         highlightSentence(location.hash.split(':'));
     }
 
-    if (getQueryParam("mode") == "view_tests_coverage") {
+    if (getQueryParam("mode") === "view_tests_coverage") {
         loadJSON("./specTestsMap.json", showCoverage);
         document.body.classList.add("view-tests-coverage");
     }
