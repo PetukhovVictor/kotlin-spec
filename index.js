@@ -40,8 +40,14 @@ function highlightSentence(hashComponents) {
     }
 }
 
-function showSentenceCoverage(sentenceElement, sentenceTestInfo, sentenceNumber, paragraphNumber) {
-    sentenceElement.setAttribute("data-d", "4");
+function addNumberInfo(sentenceElement, sentenceNumber) {
+    var numberInfoSpan = document.createElement("span");
+    numberInfoSpan.setAttribute("class", "number-info");
+    numberInfoSpan.innerHTML = sentenceNumber;
+    sentenceElement.insertBefore(numberInfoSpan, sentenceElement.firstChild);
+}
+
+function showSentenceCoverage(sentenceElement, sentenceTestInfo, sentenceNumber) {
     sentenceElement.style.background = "rgb(213, 236, 206)";
     sentenceElement.style.borderRadius = "5px";
 
@@ -56,20 +62,20 @@ function showSentenceCoverage(sentenceElement, sentenceTestInfo, sentenceNumber,
 
     var testsByArea = [];
 
-    for (var area in sentenceTestInfo) {
+    Object.keys(sentenceTestInfo).forEach(function (testArea) {
         var testNumberByType = {};
-        for (var testType in sentenceTestInfo[area]) {
-            var testNumber = Object.keys(sentenceTestInfo[area][testType]).length;
-            testNumberByType[testType] = testNumber;
-        }
+        Object.keys(sentenceTestInfo[testArea]).forEach(function (testType) {
+            testNumberByType[testType] = Object.keys(sentenceTestInfo[testArea][testType]).length;
+        });
+
         var testNumberByTypeInfo = [];
-        for (var testNumberInfo in testNumberByType) {
+        Object.keys(testNumberByType).forEach(function (testNumberInfo) {
             testNumberByTypeInfo.push(testNumberByType[testNumberInfo] + " " + testTypes[testNumberInfo]);
-        }
+        });
         if (testNumberByTypeInfo.length > 0) {
-            testsByArea.push("<b>" + area.toLocaleUpperCase() + "</b>: " + testNumberByTypeInfo.join(", "));
+            testsByArea.push("<b>" + testArea.toLocaleUpperCase() + "</b>: " + testNumberByTypeInfo.join(", "));
         }
-    }
+    });
 
     var coverageInfoSpan = document.createElement("span");
     coverageInfoSpan.setAttribute("class", "coverage-info");
@@ -79,13 +85,6 @@ function showSentenceCoverage(sentenceElement, sentenceTestInfo, sentenceNumber,
     addNumberInfo(sentenceElement, sentenceNumber);
 }
 
-function addNumberInfo(sentenceElement, sentenceNumber) {
-    var numberInfoSpan = document.createElement("span");
-    numberInfoSpan.setAttribute("class", "number-info");
-    numberInfoSpan.innerHTML = sentenceNumber;
-    sentenceElement.insertBefore(numberInfoSpan, sentenceElement.firstChild);
-}
-
 function markSentenceNotCovered(sentenceElement, sentenceNumber) {
     sentenceElement.style.background = "rgb(255, 195, 195)";
     sentenceElement.style.borderRadius = "5px";
@@ -93,16 +92,26 @@ function markSentenceNotCovered(sentenceElement, sentenceNumber) {
     addNumberInfo(sentenceElement, sentenceNumber);
 }
 
+function showCoverageProcessParagraph(paragraph, paragraphs, paragraphCounter) {
+    var sentenceElements = paragraph.querySelectorAll(".sentence");
+    var sentenceObject = paragraphs ? paragraphs[paragraphCounter] : null;
+    var sentenceCounter = 1;
+
+    Array.from(sentenceElements).forEach(function(sentenceElement) {
+        if (sentenceObject && sentenceCounter in sentenceObject) {
+            showSentenceCoverage(sentenceElement, sentenceObject[sentenceCounter], sentenceCounter, paragraphCounter);
+        } else {
+            markSentenceNotCovered(sentenceElement, sentenceCounter);
+        }
+        sentenceCounter++;
+    });
+    addNumberInfo(paragraph, paragraphCounter);
+}
+
 function showCoverage(specTestsMap) {
-    // for (var section in specTestsMap) {
-    //     var paragraphs = specTestsMap[section];
     var sections = document.querySelectorAll("h3");
 
     Array.from(sections).forEach(function(sectionElement) {
-        // if (sectionElement == null) {
-        //     continue
-        // }
-
         var nextSibling = sectionElement.nextElementSibling;
         var sectionId = sectionElement.attributes.getNamedItem("id").value;
         var paragraphs = specTestsMap[sectionId];
@@ -115,31 +124,16 @@ function showCoverage(specTestsMap) {
             var isParagraph = nextSibling.classList && (nextSibling.classList.contains("paragraph") || nextSibling.tagName === "DL" || nextSibling.tagName === "UL" || nextSibling.tagName === "OL");
             var childParagraph = nextSibling.querySelector(".paragraph");
 
-            if (isParagraph || childParagraph) { //  && ++paragraphCounter in paragraphs
-                var paragraph = childParagraph || nextSibling;
-
+            if (isParagraph || childParagraph) {
+                showCoverageProcessParagraph(childParagraph || nextSibling, paragraphs, paragraphCounter);
                 paragraphCounter++;
-
-                var sentenceElements = paragraph.querySelectorAll(".sentence");
-                var sentenceObject = paragraphs ? paragraphs[paragraphCounter] : null;
-                var sentenceCounter = 1;
-
-                Array.from(sentenceElements).forEach(function(sentenceElement) {
-                    if (sentenceObject && sentenceCounter in sentenceObject) {
-                        showSentenceCoverage(sentenceElement, sentenceObject[sentenceCounter], sentenceCounter, paragraphCounter);
-                    } else {
-                        markSentenceNotCovered(sentenceElement, sentenceCounter);
-                    }
-                    sentenceCounter++;
-                });
-                addNumberInfo(paragraph, paragraphCounter);
             }
             nextSibling = nextSibling.nextElementSibling;
         }
     })
 }
 
-window.addEventListener("DOMContentLoaded", function(event) {
+window.addEventListener("DOMContentLoaded", function() {
     if (location.hash) {
         highlightSentence(location.hash.split(':'));
     }
