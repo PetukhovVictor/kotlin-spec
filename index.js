@@ -45,7 +45,10 @@ function showSentenceCoverage(sentenceElement, sentenceTestInfo, sentenceNumber,
     sentenceElement.style.background = "rgb(213, 236, 206)";
     sentenceElement.style.borderRadius = "5px";
 
-    ["diagnostics", "psi", "codegen"].forEach(function(testArea) {
+    var testTypes = {"pos": "positive", "neg": "negative"};
+    var testAreas = ["diagnostics", "psi", "codegen"];
+
+    testAreas.forEach(function(testArea) {
         if (!sentenceTestInfo[testArea]) {
             sentenceTestInfo[testArea] = {};
         }
@@ -56,16 +59,12 @@ function showSentenceCoverage(sentenceElement, sentenceTestInfo, sentenceNumber,
     for (var area in sentenceTestInfo) {
         var testNumberByType = {};
         for (var testType in sentenceTestInfo[area]) {
-            var testCasesNumber = 0;
-            for (var test in sentenceTestInfo[area][testType]) {
-                testCasesNumber += sentenceTestInfo[area][testType][test].cases.length;
-            }
             var testNumber = Object.keys(sentenceTestInfo[area][testType]).length;
-            testNumberByType[testType] = testNumber + " (cases: " + testCasesNumber + ")";
+            testNumberByType[testType] = testNumber;
         }
         var testNumberByTypeInfo = [];
         for (var testNumberInfo in testNumberByType) {
-            testNumberByTypeInfo.push(testNumberInfo + " — " + testNumberByType[testNumberInfo]);
+            testNumberByTypeInfo.push(testNumberByType[testNumberInfo] + " " + testTypes[testNumberInfo]);
         }
         if (testNumberByTypeInfo.length > 0) {
             testsByArea.push("<b>" + area.toLocaleUpperCase() + "</b>: " + testNumberByTypeInfo.join(", "));
@@ -85,7 +84,6 @@ function addNumberInfo(sentenceElement, sentenceNumber) {
     numberInfoSpan.setAttribute("class", "number-info");
     numberInfoSpan.innerHTML = sentenceNumber;
     sentenceElement.insertBefore(numberInfoSpan, sentenceElement.firstChild);
-    sentenceElement.classList.add(sentenceNumber);
 }
 
 function markSentenceNotCovered(sentenceElement, sentenceNumber) {
@@ -106,35 +104,37 @@ function showCoverage(specTestsMap) {
         // }
 
         var nextSibling = sectionElement.nextElementSibling;
+        var sectionId = sectionElement.attributes.getNamedItem("id").value;
+        var paragraphs = specTestsMap[sectionId];
         var paragraphCounter = 0;
 
         while (nextSibling) {
-            var isNewSection = nextSibling.tagName === "H3";
+            var isNewSection = nextSibling.tagName === "H3" || nextSibling.tagName === "H2";
             if (isNewSection) break;
 
-            var isParagraph = nextSibling.classList && (nextSibling.classList.contains("paragraph") || nextSibling.tagName === "DL" || nextSibling.tagName === "UL" || nextSibling.tagName === "BLOCKQUOTE");
-            if (isParagraph) { //  && ++paragraphCounter in paragraphs
+            var isParagraph = nextSibling.classList && (nextSibling.classList.contains("paragraph") || nextSibling.tagName === "DL" || nextSibling.tagName === "UL" || nextSibling.tagName === "OL");
+            var childParagraph = nextSibling.querySelector(".paragraph");
+
+            if (isParagraph || childParagraph) { //  && ++paragraphCounter in paragraphs
+                var paragraph = childParagraph || nextSibling;
+
                 paragraphCounter++;
 
-                var sentenceElements = nextSibling.querySelectorAll(".sentence");
-                // var sentenceObject = paragraphs[paragraphCounter];
+                var sentenceElements = paragraph.querySelectorAll(".sentence");
+                var sentenceObject = paragraphs ? paragraphs[paragraphCounter] : null;
                 var sentenceCounter = 1;
 
                 Array.from(sentenceElements).forEach(function(sentenceElement) {
-                    // if (sentenceCounter in sentenceObject) {
-                    //     showSentenceCoverage(sentenceElement, sentenceObject[sentenceCounter], sentenceCounter, paragraphCounter);
-                    // } else {
+                    if (sentenceObject && sentenceCounter in sentenceObject) {
+                        showSentenceCoverage(sentenceElement, sentenceObject[sentenceCounter], sentenceCounter, paragraphCounter);
+                    } else {
                         markSentenceNotCovered(sentenceElement, sentenceCounter);
-                    // }
+                    }
                     sentenceCounter++;
                 });
-                if (nextSibling.attributes.getNamedItem("id") && nextSibling.attributes.getNamedItem("id").value === "adfad") {
-                    console.log("!!!");
-                    console.log(paragraphCounter);
-                }
-                addNumberInfo(nextSibling, paragraphCounter);
+                addNumberInfo(paragraph, paragraphCounter);
             }
-            nextSibling = nextSibling.nextSibling;
+            nextSibling = nextSibling.nextElementSibling;
         }
     })
 }

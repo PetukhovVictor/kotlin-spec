@@ -5,31 +5,28 @@
         "diagnostics": {
           "neg": {
             "1": {
-              "cases": [
-                "Empty 'when' with missed bound value."
-              ],
               "description": "Empty 'when' with missed bound value."
             },
             "2": {
               "cases": [
-                "'When' with bound value.",
-                "'When' without bound value and parentheses.",
-                "'When' without bound value, but with parentheses."
+                {
+                  "description": "'When' with bound value."
+                },
+                {
+                  "description": "'When' without bound value and parentheses."
+                },
+                {
+                  "description": "'When' without bound value, but with parentheses."
+                }
               ],
               "description": "Empty 'when' with missed 'when entries' section."
             }
           },
           "pos": {
             "1": {
-              "cases": [
-                "Empty 'when' with bound value."
-              ],
               "description": "Empty 'when' with bound value."
             },
             "2": {
-              "cases": [
-                "Empty 'when' without bound value."
-              ],
               "description": "Empty 'when' without bound value."
             }
           }
@@ -41,167 +38,123 @@
         "diagnostics": {
           "neg": {
             "1": {
-              "cases": [
-                "'When' without bound value and missed control structure body."
-              ],
               "description": "'When' without bound value and missed control structure body."
             },
             "2": {
-              "cases": [
-                "'When' without bound value and missed 'when condition'."
-              ],
               "description": "'When' without bound value and missed 'when condition'."
+            },
+            "3": {
+              "cases": [
+                {
+                  "description": "'When' with break expression (without label)."
+                },
+                {
+                  "description": "'When' with continue expression (without label)."
+                },
+                {
+                  "description": "'When' with with continue (first) and break (second) expression (without label)."
+                },
+                {
+                  "description": "'When' with with continue (second) and break (first) expression (without label)."
+                }
+              ],
+              "description": "'When' without bound value and not allowed break and continue expression (without labels) in the control structure body."
             }
           },
           "pos": {
             "1": {
               "cases": [
-                "'When' with control structure body as arithmetic expression (minus and plus of Integer) with Char.",
-                "'When' with control structure body as arithmetic expression with Byte.",
-                "'When' with control structure body as arithmetic expression with Double.",
-                "'When' with control structure body as arithmetic expression with Float.",
-                "'When' with control structure body as arithmetic expression with Int.",
-                "'When' with control structure body as arithmetic expression with Long.",
-                "'When' with control structure body as arithmetic expression with Short."
+                {
+                  "description": "'When' with control structure body as arithmetic expression (minus and plus of Integer) with Char."
+                },
+                {
+                  "description": "'When' with control structure body as arithmetic expression with Byte."
+                },
+                {
+                  "description": "'When' with control structure body as arithmetic expression with Double."
+                },
+                {
+                  "description": "'When' with control structure body as arithmetic expression with Float."
+                },
+                {
+                  "description": "'When' with control structure body as arithmetic expression with Int."
+                },
+                {
+                  "description": "'When' with control structure body as arithmetic expression with Long."
+                },
+                {
+                  "description": "'When' with control structure body as arithmetic expression with Short."
+                }
               ],
               "description": "'When' with different variants of the arithmetic expressions (additive expression and multiplicative expression) in the control structure body."
             },
             "2": {
-              "cases": [
-                "'When' with different variants of the logical expressions in the control structure body."
-              ],
               "description": "'When' with different variants of the logical expressions in the control structure body."
             },
             "3": {
-              "cases": [
-                "'When' with different variants of the equality expression in the control structure body."
-              ],
               "description": "'When' with different variants of the equality expression in the control structure body."
             },
             "4": {
-              "cases": [
-                "'When' with different variants of the comparison expression in the control structure body."
-              ],
               "description": "'When' with different variants of the comparison expression in the control structure body."
             },
             "5": {
-              "cases": [
-                "'When' with concatenations in the control structure body."
-              ],
               "description": "'When' with concatenations in the control structure body."
             },
             "6": {
-              "cases": [
-                "'When' with exhaustive when expression in the control structure body."
-              ],
               "description": "'When' with exhaustive when expression in the control structure body."
             },
             "7": {
-              "cases": [
-                "'When' with if expressions in the control structure body."
-              ],
               "description": "'When' with if expressions in the control structure body."
             },
             "8": {
-              "cases": [
-                "'When' with try expression in the control structure body."
-              ],
               "description": "'When' with try expression in the control structure body."
             },
             "9": {
-              "cases": [
-                "'When' with elvis operator expression in the control structure body."
-              ],
               "description": "'When' with elvis operator expression in the control structure body."
             },
             "10": {
-              "cases": [
-                "'When' with range expression in the control structure body."
-              ],
               "description": "'When' with range expression in the control structure body."
             },
             "11": {
-              "cases": [
-                "'When' with cast expression in the control structure body."
-              ],
               "description": "'When' with cast expression in the control structure body."
             },
             "12": {
-              "cases": [
-                "'When' with prefix operator expression in the control structure body."
-              ],
               "description": "'When' with prefix operator expression in the control structure body."
             },
             "13": {
-              "cases": [
-                "'When' with postfix operator expression in the control structure body."
-              ],
               "description": "'When' with postfix operator expression in the control structure body."
             },
             "14": {
-              "cases": [
-                "'When' with indexing expression in the control structure body."
-              ],
               "description": "'When' with indexing expression in the control structure body."
             },
             "15": {
-              "cases": [
-                "'When' with call expression in the control structure body."
-              ],
               "description": "'When' with call expression in the control structure body."
             },
             "16": {
-              "cases": [
-                "'When' with property access expression in the control structure body."
-              ],
               "description": "'When' with property access expression in the control structure body."
             },
             "17": {
-              "cases": [
-                "'When' with fun literal in the control structure body."
-              ],
               "description": "'When' with fun literal in the control structure body."
             },
             "18": {
-              "cases": [
-                "'When' with lambda literal in the control structure body."
-              ],
               "description": "'When' with lambda literal in the control structure body."
             },
             "19": {
-              "cases": [
-                "'When' with object literal in the control structure body."
-              ],
               "description": "'When' with object literal in the control structure body."
             },
             "20": {
-              "cases": [
-                "'When' with this expression in the control structure body."
-              ],
               "description": "'When' with this expression in the control structure body."
             },
             "21": {
-              "cases": [
-                "'When' with throw expression in the control structure body."
-              ],
               "description": "'When' with throw expression in the control structure body."
             },
             "22": {
-              "cases": [
-                "'When' with return expression in the control structure body."
-              ],
               "description": "'When' with return expression in the control structure body."
             },
             "23": {
-              "cases": [
-                "'When' with continue expression in the control structure body."
-              ],
               "description": "'When' with continue expression in the control structure body."
             },
             "24": {
-              "cases": [
-                "'When' with break expression in the control structure body."
-              ],
               "description": "'When' with break expression in the control structure body."
             }
           }
@@ -212,32 +165,64 @@
           "neg": {
             "1": {
               "cases": [
-                "'When' with Any in 'when condition'.",
-                "'When' with List (Collection example) in 'when condition'.",
-                "'When' with Nothing in 'when condition'.",
-                "'When' with String and Char in 'when condition'.",
-                "'When' with Unit in 'when condition'.",
-                "'When' with numbers (Int, Short, Byte, Long, Float, Double) and Char (used as a number) in 'when condition'.",
-                "'When' with range expression (IntRange) in 'when condition'."
+                {
+                  "description": "'When' with Any in 'when condition'."
+                },
+                {
+                  "description": "'When' with List (Collection example) in 'when condition'."
+                },
+                {
+                  "description": "'When' with Nothing in 'when condition'."
+                },
+                {
+                  "description": "'When' with String and Char in 'when condition'."
+                },
+                {
+                  "description": "'When' with Unit in 'when condition'."
+                },
+                {
+                  "description": "'When' with numbers (Int, Short, Byte, Long, Float, Double) and Char (used as a number) in 'when condition'."
+                },
+                {
+                  "description": "'When' with range expression (IntRange) in 'when condition'."
+                }
               ],
               "description": "'When' without bound value and with not boolean condition in 'when condition'."
             },
             "2": {
               "cases": [
-                "'When' with one not 'else' valid branch and invalid 'else' branch.",
-                "'When' with only one invalid 'else' branch.",
-                "'When' with only two invalid 'else' branches.",
-                "'When' with two not 'else' valid branches and invalid 'else' branch."
+                {
+                  "description": "'When' with one not 'else' valid branch and invalid 'else' branch."
+                },
+                {
+                  "description": "'When' with only one invalid 'else' branch."
+                },
+                {
+                  "description": "'When' with only two invalid 'else' branches."
+                },
+                {
+                  "description": "'When' with two not 'else' valid branches and invalid 'else' branch."
+                }
               ],
               "description": "'When' without bound value and with invalid 'else' branch."
             },
             "3": {
               "cases": [
-                "'When' with empty list of expressions and with double comma.",
-                "'When' with list of expressions and a comma at the beginning.",
-                "'When' with list of expressions and an double comma.",
-                "'When' with list of expressions and an extra comma at the end.",
-                "'When' with list of expressions and missed comma."
+                {
+                  "description": "'When' with empty list of expressions and with double comma."
+                },
+                {
+                  "description": "'When' with list of expressions and a comma at the beginning."
+                },
+                {
+                  "description": "'When' with list of expressions and an double comma."
+                },
+                {
+                  "description": "'When' with list of expressions and an extra comma at the end."
+                },
+                {
+                  "description": "'When' with list of expressions and missed comma."
+                }
               ],
               "description": "'When' without bound value and with invalid list of the boolean conditions in 'when entry'."
             }
@@ -245,662 +230,61 @@
           "pos": {
             "1": {
               "cases": [
-                "'When' with 'else' branch.",
-                "'When' with only one 'else' branch.",
-                "'When' without 'else' branch."
+                {
+                  "description": "'When' with 'else' branch."
+                },
+                {
+                  "description": "'When' with only one 'else' branch."
+                },
+                {
+                  "description": "'When' without 'else' branch."
+                }
               ],
               "description": "'When' without bound value and different variants of the boolean conditions (numbers and Char)."
             },
             "2": {
               "cases": [
-                "'When' with 'else' branch.",
-                "'When' without 'else' branch."
+                {
+                  "description": "'When' with 'else' branch."
+                },
+                {
+                  "description": "'When' without 'else' branch."
+                }
               ],
               "description": "'When' without bound value and different variants of the boolean conditions (String and Char)."
             },
             "3": {
               "cases": [
-                "'When' with 'else' branch.",
-                "'When' without 'else' branch."
+                {
+                  "description": "'When' with 'else' branch."
+                },
+                {
+                  "description": "'When' without 'else' branch."
+                }
               ],
               "description": "'When' without bound value and different variants of the boolean conditions (various objects)."
             },
             "4": {
               "cases": [
-                "'When' with 'else' branch.",
-                "'When' without 'else' branch."
+                {
+                  "description": "'When' with 'else' branch."
+                },
+                {
+                  "description": "'When' without 'else' branch."
+                }
               ],
               "description": "'When' without bound value and different variants of the boolean conditions (boolean literals and return boolean values)."
             },
             "5": {
               "cases": [
-                "'When' with only one 'else' branch ('when' used as expression).",
-                "'When' with only one 'else' branch ('when' used as statement)."
+                {
+                  "description": "'When' with only one 'else' branch ('when' used as expression)."
+                },
+                {
+                  "description": "'When' with only one 'else' branch ('when' used as statement)."
+                }
               ],
               "description": "'When' without bound value and only one 'else' branch."
-            }
-          }
-        }
-      },
-      "7": {
-        "diagnostics": {
-          "neg": {
-            "1": {
-              "cases": [
-                "'When' with 'else' branch followed by one not 'else' branch.",
-                "'When' with 'else' branch followed by two not 'else' branches.",
-                "'When' with not 'else' branches followed by 'else' branch followed by not 'else' branch.",
-                "'When' with two 'else' branches."
-              ],
-              "description": "'When' without bound value and with 'else' branch not in the last position."
-            }
-          },
-          "pos": {
-            "1": {
-              "cases": [
-                "'When' without bound value and with else branch in the last position."
-              ],
-              "description": "'When' without bound value and with else branch in the last position."
-            }
-          }
-        }
-      }
-    },
-    "4": {
-      "1": {
-        "diagnostics": {
-          "neg": {
-            "1": {
-              "cases": [
-                "'When' with bound value and empty control structure body."
-              ],
-              "description": "'When' with bound value and empty control structure body."
-            },
-            "2": {
-              "cases": [
-                "'When' with bound value and empty 'when condition'."
-              ],
-              "description": "'When' with bound value and empty 'when condition'."
-            },
-            "3": {
-              "cases": [
-                "'When' with bound value and with invalid list of the conditions in 'when entry'."
-              ],
-              "description": "'When' with bound value and with invalid list of the conditions in 'when entry'."
-            }
-          },
-          "pos": {
-            "1": {
-              "cases": [
-                "'When' with control structure body as arithmetic expression with Byte.",
-                "'When' with control structure body as arithmetic expression with Double.",
-                "'When' with control structure body as arithmetic expression with Float.",
-                "'When' with control structure body as arithmetic expression with Int.",
-                "'When' with control structure body as arithmetic expression with Long.",
-                "'When' with control structure body as arithmetic expression with Short."
-              ],
-              "description": "'When' with different variants of the arithmetic expressions (additive expression and multiplicative expression) in the control structure body."
-            },
-            "2": {
-              "cases": [
-                "'When' with different variants of the logical expressions in the control structure body."
-              ],
-              "description": "'When' with different variants of the logical expressions in the control structure body."
-            },
-            "3": {
-              "cases": [
-                "'When' with different variants of the equality expression in the control structure body."
-              ],
-              "description": "'When' with different variants of the equality expression in the control structure body."
-            },
-            "4": {
-              "cases": [
-                "'When' with different variants of the comparison expression in the control structure body."
-              ],
-              "description": "'When' with different variants of the comparison expression in the control structure body."
-            },
-            "5": {
-              "cases": [
-                "'When' with concatenations in the control structure body."
-              ],
-              "description": "'When' with concatenations in the control structure body."
-            },
-            "6": {
-              "cases": [
-                "'When' with exhaustive when expression in the control structure body."
-              ],
-              "description": "'When' with exhaustive when expression in the control structure body."
-            },
-            "7": {
-              "cases": [
-                "'When' with if expressions in the control structure body."
-              ],
-              "description": "'When' with if expressions in the control structure body."
-            },
-            "8": {
-              "cases": [
-                "'When' with try expression in the control structure body."
-              ],
-              "description": "'When' with try expression in the control structure body."
-            },
-            "9": {
-              "cases": [
-                "'When' with elvis operator expression in the control structure body."
-              ],
-              "description": "'When' with elvis operator expression in the control structure body."
-            },
-            "10": {
-              "cases": [
-                "'When' with range expression in the control structure body."
-              ],
-              "description": "'When' with range expression in the control structure body."
-            },
-            "11": {
-              "cases": [
-                "'When' with cast expression in the control structure body."
-              ],
-              "description": "'When' with cast expression in the control structure body."
-            },
-            "12": {
-              "cases": [
-                "'When' with prefix operator expression in the control structure body."
-              ],
-              "description": "'When' with prefix operator expression in the control structure body."
-            },
-            "13": {
-              "cases": [
-                "'When' with postfix operator expression in the control structure body."
-              ],
-              "description": "'When' with postfix operator expression in the control structure body."
-            },
-            "14": {
-              "cases": [
-                "'When' with indexing expression in the control structure body."
-              ],
-              "description": "'When' with indexing expression in the control structure body."
-            },
-            "15": {
-              "cases": [
-                "'When' with call expression in the control structure body."
-              ],
-              "description": "'When' with call expression in the control structure body."
-            },
-            "16": {
-              "cases": [
-                "'When' with property access expression in the control structure body."
-              ],
-              "description": "'When' with property access expression in the control structure body."
-            },
-            "17": {
-              "cases": [
-                "'When' with fun literal in the control structure body."
-              ],
-              "description": "'When' with fun literal in the control structure body."
-            },
-            "18": {
-              "cases": [
-                "'When' with lambda literal in the control structure body."
-              ],
-              "description": "'When' with lambda literal in the control structure body."
-            },
-            "19": {
-              "cases": [
-                "'When' with object literal in the control structure body."
-              ],
-              "description": "'When' with object literal in the control structure body."
-            },
-            "20": {
-              "cases": [
-                "'When' with this expression in the control structure body."
-              ],
-              "description": "'When' with this expression in the control structure body."
-            },
-            "21": {
-              "cases": [
-                "'When' with throw expression in the control structure body."
-              ],
-              "description": "'When' with throw expression in the control structure body."
-            },
-            "22": {
-              "cases": [
-                "'When' with return expression in the control structure body."
-              ],
-              "description": "'When' with return expression in the control structure body."
-            },
-            "23": {
-              "cases": [
-                "'When' with continue expression in the control structure body."
-              ],
-              "description": "'When' with continue expression in the control structure body."
-            },
-            "24": {
-              "cases": [
-                "'When' with break expression in the control structure body."
-              ],
-              "description": "'When' with break expression in the control structure body."
-            },
-            "25": {
-              "cases": [
-                "'When' with list of Byte with 'else' branch.",
-                "'When' with list of Byte.",
-                "'When' with list of Char with 'else' branch.",
-                "'When' with list of Char.",
-                "'When' with list of Double with 'else' branch.",
-                "'When' with list of Double.",
-                "'When' with list of Float with 'else' branch.",
-                "'When' with list of Float.",
-                "'When' with list of Integer with 'else' branch.",
-                "'When' with list of Integer.",
-                "'When' with list of Long with 'else' branch.",
-                "'When' with list of Long.",
-                "'When' with list of Short with 'else' branch.",
-                "'When' with list of Short.",
-                "'When' with list of String with 'else' branch.",
-                "'When' with list of String."
-              ],
-              "description": "'When' with bound value and a list of boolean conditions in 'when entry'."
-            }
-          }
-        }
-      },
-      "3": {
-        "diagnostics": {
-          "neg": {
-            "1": {
-              "cases": [
-                "'When' with Any type test condition.",
-                "'When' with Nothing type test condition.",
-                "'When' with custom class type test condition."
-              ],
-              "description": "'When' with bound value and type test condition (without companion object in class), but without type checking operator."
-            },
-            "2": {
-              "cases": [
-                "'When' with one type checking operator.",
-                "'When' with two type checking operators."
-              ],
-              "description": "'When' with bound value and type test condition, but missed type in 'when condition'."
-            },
-            "3": {
-              "cases": [
-                "'When' with custom object and companion object of class as type checking operator value.",
-                "'When' with literals as type checking operator value.",
-                "'When' with variables and return value as type checking operator value."
-              ],
-              "description": "'When' with bound value and 'when condition' with type checking operator and non-type value."
-            }
-          },
-          "pos": {
-            "1": {
-              "cases": [
-                "'When' with 'else' branch and type test condition on Any.",
-                "'When' with 'else' branch and type test condition on Nothing.",
-                "'When' with 'else' branch and type test condition on Unit.",
-                "'When' with 'else' branch and type test condition on the one basic types (Int).",
-                "'When' with 'else' branch and type test condition on the various basic types.",
-                "'When' with type test condition on the one basic types (Int).",
-                "'When' with type test condition on the various basic types."
-              ],
-              "description": "'When' with bound value and type test condition."
-            },
-            "2": {
-              "cases": [
-                "'When' with type test condition on the all possible subtypes of the sealed class and 'else' branch (redundant).",
-                "'When' with type test condition on the all possible subtypes of the sealed class.",
-                "'When' with type test condition on the empty sealed class.",
-                "'When' with type test condition on the not all possible subtypes of the sealed class and 'else' branch.",
-                "'When' with type test condition on the not all possible subtypes of the sealed class."
-              ],
-              "description": "'When' with bound value and type test condition (with sealed class)."
-            },
-            "3": {
-              "cases": [
-                "'When' as expression with direct (in the first position) and invert (in the second position) type checking operators on the same subtype of the sealed class, and 'else' branch.",
-                "'When' as expression with direct (in the second position) and invert (in the first position) type checking operators on the same subtype of the sealed class.",
-                "'When' as statement with direct (in the second position) and invert (in the first position) type checking operators on the same subtype of the sealed class.",
-                "'When' as statement with direct and invert type checking operators on the same subtype of thee sealed class, and 'else' branch.",
-                "'When' with direct (in the second position) and invert (in the first position) type checking operators on the same subtype of the sealed class, and 'else' branch (redundant).",
-                "'When' with direct and invert type checking operators on the basic type (String).",
-                "'When' with direct and invert type checking operators on the same subtype of thee sealed class.",
-                "'When' with one direct type checking operator on the some subtype of the sealed class, and 'else' branch.",
-                "'When' with one invert type checking operator on the some subtype of the sealed class, and 'else' branch.",
-                "'When' with three basic types (Int, Boolean, String) covered and all types other than specified covered via invert type checking operator, and 'else' branch.",
-                "'When' with three invert type checking operators on the all sybtypes of the sealed class.",
-                "'When' with two subtypes of the sealed class covered and all subtypes other than specified covered via invert type checking operator."
-              ],
-              "description": "'When' with bound value and type test condition (with invert type checking operator)."
-            },
-            "4": {
-              "cases": [
-                "'When' with type checking operator on the Nothing typealias, and 'else' branch.",
-                "'When' with type checking operator on the one typealias and 'else' branch.",
-                "'When' with type checking operator on the one typealias which is equal to the source type, and 'else' branch.",
-                "'When' with type checking operator on the one typealias which is not equal to the source type, and 'else' branch.",
-                "'When' with type checking operator on the two typealiases (one of which is equal to the source type)."
-              ],
-              "description": "'When' with bound value and type test condition with type aliases."
-            }
-          }
-        }
-      },
-      "5": {
-        "diagnostics": {
-          "neg": {
-            "1": {
-              "cases": [
-                "'When' with bound value and 'when condition' with range expression, but without contains operator."
-              ],
-              "description": "'When' with bound value and 'when condition' with range expression, but without contains operator."
-            },
-            "2": {
-              "cases": [
-                "'When' with one contains operator.",
-                "'When' with two contains operators."
-              ],
-              "description": "'When' with bound value and 'when condition' with range expression, but without contains operator."
-            },
-            "3": {
-              "cases": [
-                "'When' with object of custom class, without defined contains operator.",
-                "'When' with object of various basic types (Int, Any, Nothing, Unit, Map — Collection example), without defined contains operator."
-              ],
-              "description": "'When' with bound value and 'when condition' with contains operator and object without defined contains operator."
-            }
-          },
-          "pos": {
-            "1": {
-              "cases": [
-                "'When' with one integer range (not exhaustive).",
-                "'When' with one integer range and 'else' branch (exhaustive).",
-                "'When' with various integer ranges (not exhaustive).",
-                "'When' with various integer ranges and 'else' branch (exhaustive)."
-              ],
-              "description": "'When' with bound value and containment operator with range operator."
-            },
-            "2": {
-              "cases": [
-                "'When' with contains operator on the classes with contains operator defined (IntRange), and 'else' branch.",
-                "'When' with contains operator on the classes with contains operator defined (IntRange), and 'else' branch.",
-                "'When' with contains operator on the classes with contains operator defined (IntRange).",
-                "'When' with contains operator on the classes with contains operator defined (IntRange).",
-                "'When' with contains operator on the classes with contains operator defined (LongRange), and 'else' branch.",
-                "'When' with contains operator on the classes with contains operator defined (LongRange).",
-                "'When' with one contains operator on the class with contains operator defined (IntRange), and 'else' branch.",
-                "'When' with one contains operator on the class with contains operator defined (IntRange)."
-              ],
-              "description": "'When' with bound value and containment operator on the classes with contains operator defined."
-            }
-          }
-        }
-      },
-      "7": {
-        "diagnostics": {
-          "neg": {
-            "1": {
-              "cases": [
-                "'When' with assignments.",
-                "'When' with do-while statement.",
-                "'When' with for statement.",
-                "'When' with while statement."
-              ],
-              "description": "'When' with bound value and non-expressions in 'when condition'."
-            }
-          },
-          "pos": {
-            "1": {
-              "cases": [
-                "'When' with 'when condition' as arithmetic expression (minus and plus of Integer) with Char, and 'else' branch.",
-                "'When' with 'when condition' as arithmetic expression (minus and plus of Integer) with Char.",
-                "'When' with 'when condition' as arithmetic expression with Byte, and 'else' branch.",
-                "'When' with 'when condition' as arithmetic expression with Byte.",
-                "'When' with 'when condition' as arithmetic expression with Double, and 'else' branch.",
-                "'When' with 'when condition' as arithmetic expression with Double.",
-                "'When' with 'when condition' as arithmetic expression with Float, and 'else' branch.",
-                "'When' with 'when condition' as arithmetic expression with Float.",
-                "'When' with 'when condition' as arithmetic expression with Int, and 'else' branch.",
-                "'When' with 'when condition' as arithmetic expression with Int.",
-                "'When' with 'when condition' as arithmetic expression with Long, and 'else' branch.",
-                "'When' with 'when condition' as arithmetic expression with Long.",
-                "'When' with 'when condition' as arithmetic expression with Short, and 'else' branch.",
-                "'When' with 'when condition' as arithmetic expression with Short."
-              ],
-              "description": "'When' with different variants of the arithmetic expressions (additive expression and multiplicative expression) in 'when condition'."
-            },
-            "2": {
-              "cases": [
-                "'When' with complex boolean literals expression in 'when condition', and 'else' branch.",
-                "'When' with complex boolean literals expression in 'when condition'.",
-                "'When' with complex boolean variables expression in 'when condition', and 'else' branch.",
-                "'When' with complex boolean variables expression in 'when condition'."
-              ],
-              "description": "'When' with bound value and logical expressions in 'when condition'."
-            },
-            "3": {
-              "cases": [
-                "'When' as expression with Boolean (literals) equality expressions in 'when condition' and 'else' branch.",
-                "'When' as expression with Boolean (literals) equality expressions in 'when condition'.",
-                "'When' as expression with Boolean (variables and literals) equality expressions in 'when condition' and 'else' branch.",
-                "'When' as statement with Boolean (literals) equality expressions in 'when condition'.",
-                "'When' with Char and String equality expressions in 'when condition'.",
-                "'When' with boolean equality expression in 'when condition' and 'else' branch.",
-                "'When' with boolean equality expression in 'when condition'.",
-                "'When' with boolean not equality expression in 'when condition' and 'else' branch.",
-                "'When' with boolean not equality expression in 'when condition'.",
-                "'When' with numbers (and Char as number) equality expressions in 'when condition'."
-              ],
-              "description": "'When' with bound value and equality expressions in 'when condition'."
-            },
-            "4": {
-              "cases": [
-                "'When' as statement with comparison expression in 'when condition' (literals) and both boolean value covered and 'else' branch (redundant).",
-                "'When' as statement with comparison expression in 'when condition' (literals) and only one boolean value covered and 'else' branch.",
-                "'When' as statement with comparison expression in 'when condition' (literals) and only one boolean value covered.",
-                "'When' with comparison expression (literals) in 'when condition' and 'else' branch.",
-                "'When' with comparison expression (literals) in 'when condition'.",
-                "'When' with comparison expression (variables and literals) in 'when condition' and 'else' branch.",
-                "'When' with comparison expression (variables and literals) in 'when condition'."
-              ],
-              "description": "'When' with bound value and comparison expressions in 'when condition'."
-            },
-            "5": {
-              "cases": [
-                "'When' with 'else' branch (as expression).",
-                "'When' without 'else' branch (as statement)."
-              ],
-              "description": "'When' with bound value and concatenations in 'when condition'."
-            },
-            "6": {
-              "cases": [
-                "'When' with 'else' branch (as expression).",
-                "'When' without 'else' branch (as statement)."
-              ],
-              "description": "'When' with bound value and when expressions in 'when condition'."
-            },
-            "7": {
-              "cases": [
-                "'When' with 'else' branch (as expression).",
-                "'When' without 'else' branch (as statement)."
-              ],
-              "description": "'When' with bound value and if expressions in 'when condition'."
-            },
-            "8": {
-              "cases": [
-                "'When' with 'else' branch (as expression).",
-                "'When' without 'else' branch (as statement)."
-              ],
-              "description": "'When' with bound value and try expressions in 'when condition'."
-            },
-            "9": {
-              "cases": [
-                "'When' with 'else' branch (as expression) and only one entry.",
-                "'When' with 'else' branch (as expression) and several entries.",
-                "'When' without 'else' branch (as statement) and only one entry.",
-                "'When' without 'else' branch (as statement) and several entries."
-              ],
-              "description": "'When' with bound value and elvis operator expressions in 'when condition'."
-            },
-            "10": {
-              "cases": [
-                "'When' with range expressions (Any) and without 'else' branch (as statement).",
-                "'When' with range expressions (IntRange) and 'else' branch (as expression).",
-                "'When' with range expressions (IntRange) and without 'else' branch (as statement).",
-                "'When' with range expressions (LongRange) and without 'else' branch (as statement).",
-                "'When' with range expressions (LongRange) and without 'else' branch (as statement)."
-              ],
-              "description": "'When' with bound value and range expressions in 'when condition'."
-            },
-            "11": {
-              "cases": [
-                "'When' with 'else' branch (as expression).",
-                "'When' without 'else' branch (as statement)."
-              ],
-              "description": "'When' with bound value and cast expressions in 'when condition'."
-            },
-            "12": {
-              "cases": [
-                "'When' with 'else' branch (as expression) and increment/decrement operator.",
-                "'When' with 'else' branch (as expression) and not operator.",
-                "'When' without 'else' branch (as statement) and increment/decrement operator.",
-                "'When' without 'else' branch (as statement) and not operator."
-              ],
-              "description": "'When' with bound value and prefix expressions in 'when condition'."
-            },
-            "13": {
-              "cases": [
-                "'When' with 'else' branch (as expression) and increment/decrement operator.",
-                "'When' with 'else' branch (as expression) and not-null assertion operator.",
-                "'When' without 'else' branch (as statement) and increment/decrement operator.",
-                "'When' without 'else' branch (as statement) and not-null assertion operator."
-              ],
-              "description": "'When' with bound value and postfix operator expressions in 'when condition'."
-            },
-            "14": {
-              "cases": [
-                "'When' with 'else' branch (as expression).",
-                "'When' without 'else' branch (as statement)."
-              ],
-              "description": "'When' with bound value and indexing expressions in 'when condition'."
-            },
-            "15": {
-              "cases": [
-                "'When' with 'else' branch (as expression).",
-                "'When' without 'else' branch (as statement)."
-              ],
-              "description": "'When' with bound value and call expressions in 'when condition'."
-            },
-            "16": {
-              "cases": [
-                "'When' with 'else' branch (as expression).",
-                "'When' without 'else' branch (as statement)."
-              ],
-              "description": "'When' with bound value and property access expressions in 'when condition'."
-            },
-            "17": {
-              "cases": [
-                "'When' with 'else' branch (as expression).",
-                "'When' without 'else' branch (as statement)."
-              ],
-              "description": "'When' with bound value and fun literals in 'when condition'."
-            },
-            "18": {
-              "cases": [
-                "'When' with 'else' branch (as expression).",
-                "'When' without 'else' branch (as statement)."
-              ],
-              "description": "'When' with bound value and lambda literals in 'when condition'."
-            },
-            "19": {
-              "cases": [
-                "'When' with 'else' branch (as expression).",
-                "'When' without 'else' branch (as statement)."
-              ],
-              "description": "'When' with bound value and object literals in 'when condition'."
-            },
-            "20": {
-              "cases": [
-                "'When' with 'else' branch (as expression).",
-                "'When' without 'else' branch (as statement)."
-              ],
-              "description": "'When' with bound value and this expression in 'when condition'."
-            },
-            "21": {
-              "cases": [
-                "'When' with 'else' branch (as expression) and only one throw expression.",
-                "'When' with 'else' branch (as expression) and several throw expressions.",
-                "'When' without 'else' branch (as statement) and only one throw expression.",
-                "'When' without 'else' branch (as statement) and several throw expressions."
-              ],
-              "description": "'When' with bound value and throw expression in 'when condition'."
-            },
-            "22": {
-              "cases": [
-                "'When' with 'else' branch (as expression) and only one return expression.",
-                "'When' with 'else' branch (as expression) and several return expressions.",
-                "'When' without 'else' branch (as statement) and only one return expression.",
-                "'When' without 'else' branch (as statement) and several throw expressions."
-              ],
-              "description": "'When' with bound value and return expression in 'when condition'."
-            },
-            "23": {
-              "cases": [
-                "'When' with 'else' branch (as expression) and only one continue expression.",
-                "'When' with 'else' branch (as expression) and several continue expressions.",
-                "'When' without 'else' branch (as statement) and only one continue expression.",
-                "'When' without 'else' branch (as statement) and several continue expressions."
-              ],
-              "description": "'When' with bound value and continue expression in 'when condition'."
-            },
-            "24": {
-              "cases": [
-                "'When' with 'else' branch (as expression) and only one break expression.",
-                "'When' with 'else' branch (as expression) and several break expressions.",
-                "'When' without 'else' branch (as statement) and only one break expression.",
-                "'When' without 'else' branch (as statement) and several break expressions."
-              ],
-              "description": "'When' with bound value and break expression in 'when condition'."
-            }
-          }
-        }
-      },
-      "9": {
-        "diagnostics": {
-          "neg": {
-            "1": {
-              "cases": [
-                "'When' with one not 'else' valid branch and invalid 'else' branch.",
-                "'When' with only one invalid 'else' branch.",
-                "'When' with only two invalid 'else' branches.",
-                "'When' with two not 'else' valid branches and invalid 'else' branch."
-              ],
-              "description": "'When' with invalid else condition."
-            },
-            "2": {
-              "cases": [
-                "'When' with bound value and with else branch not in the last position."
-              ],
-              "description": "'When' with bound value and with else branch not in the last position."
-            }
-          },
-          "pos": {
-            "1": {
-              "cases": [
-                "Simple when with bound value, with 'else' branch and expression as when condition.",
-                "Simple when with bound value, with 'else' branch and range test as when condition.",
-                "Simple when with bound value, with 'else' branch and type test as when condition."
-              ],
-              "description": "'When' with bound value and else branch."
-            }
-          }
-        }
-      },
-      "10": {
-        "diagnostics": {
-          "pos": {
-            "1": {
-              "cases": [
-                "'When' with boolean bound value and true/false checks."
-              ],
-              "description": "'When' with boolean bound value and true/false checks."
             }
           }
         }
@@ -912,174 +296,879 @@
           "neg": {
             "1": {
               "cases": [
-                "Checking all types except the Any (implicit cast to any) in 'when' with bound value.",
-                "Checking all types except the Any (implicit cast to any) in 'when' without bound value.",
-                "Checking all types except the correct one (custom types) in 'when' with bound value.",
-                "Checking all types except the correct one (custom types) in 'when' without bound value.",
-                "Checking all types except the correct one (numbers) in 'when' with bound value.",
-                "Checking all types except the correct one (numbers) in 'when' without bound value."
+                {
+                  "description": "'When' with 'else' branch followed by one not 'else' branch."
+                },
+                {
+                  "description": "'When' with 'else' branch followed by two not 'else' branches."
+                },
+                {
+                  "description": "'When' with not 'else' branches followed by 'else' branch followed by not 'else' branch."
+                },
+                {
+                  "description": "'When' with two 'else' branches."
+                }
               ],
-              "description": "'When' least upper bound of the types check (when exhaustive via else branch)."
-            },
-            "2": {
-              "cases": [
-                "Checking all types except the Any (implicit cast to any) in 'when' with null-check branch.",
-                "Checking all types except the Any (implicit cast to any) in 'when'.",
-                "Checking all types except the correct one in 'when' with null-check branch.",
-                "Checking all types except the correct one in 'when'."
-              ],
-              "description": "'When' least upper bound of the types check (when exhaustive via enum)."
-            },
-            "3": {
-              "cases": [
-                "Checking all types except the Any (implicit cast to any) in 'when' with null-check branch.",
-                "Checking all types except the Any (implicit cast to any) in 'when'.",
-                "Checking all types except the correct one in 'when' with null-check branch.",
-                "Checking all types except the correct one in 'when'."
-              ],
-              "description": "'When' least upper bound of the types check (when exhaustive via boolean bound value)."
-            },
-            "4": {
-              "cases": [
-                "Checking all types except the Any (implicit cast to any) in 'when' with null-check branch.",
-                "Checking all types except the Any (implicit cast to any) in 'when'.",
-                "Checking all types except the correct one in 'when' with 'else' branch.",
-                "Checking all types except the correct one in 'when' with null-check branch.",
-                "Checking all types except the correct one in 'when'.",
-                "Checking objects except the Any (implicit cast to any) in 'when' with null-check branch.",
-                "Checking objects except the Any (implicit cast to any) in 'when'.",
-                "Checking objects except the correct one in 'when' with null-check branch.",
-                "Checking objects except the correct one in 'when'."
-              ],
-              "description": "'When' least upper bound of the types check (when exhaustive via sealed class)."
+              "description": "'When' without bound value and with 'else' branch not in the last position."
             }
           },
           "pos": {
             "1": {
-              "cases": [
-                "Checking Any type (implicit cast to any) in 'when' with bound value.",
-                "Checking Any type (implicit cast to any) in 'when' without bound value.",
-                "Checking correctness type (custom types) in 'when' with bound value.",
-                "Checking correctness type (custom types) in 'when' without bound value.",
-                "Checking correctness type (numbers) in 'when' with bound value.",
-                "Checking correctness type (numbers) in 'when' without bound value."
-              ],
-              "description": "'When' least upper bound of the types check (when exhaustive via else branch)."
-            },
-            "2": {
-              "cases": [
-                "Checking Any type (implicit cast to any) in 'when' with null-check branch.",
-                "Checking Any type (implicit cast to any) in 'when'.",
-                "Checking correct type in 'when' with null-check branch.",
-                "Checking correct type in 'when'."
-              ],
-              "description": "'When' least upper bound of the types check (when exhaustive via enum)."
-            },
-            "3": {
-              "cases": [
-                "Checking Any type (implicit cast to any) in 'when' with null-check branch.",
-                "Checking Any type (implicit cast to any) in 'when'.",
-                "Checking correct type in 'when' with null-check branch.",
-                "Checking correct type in 'when'."
-              ],
-              "description": "'When' least upper bound of the types check (when exhaustive via boolean bound value)."
-            },
-            "4": {
-              "cases": [
-                "Checking Any type (implicit cast to any) in 'when' (equality with objects).",
-                "Checking Any type (implicit cast to any) in 'when' with null-check branch (equality with objects).",
-                "Checking Any type (implicit cast to any) in 'when' with null-check branch.",
-                "Checking Any type (implicit cast to any) in 'when'.",
-                "Checking correct basic type (Int) in 'when' with.",
-                "Checking correct type in 'when' (equality with objects) with null-check branch.",
-                "Checking correct type in 'when' (equality with objects).",
-                "Checking correct type in 'when' with null-check branch.",
-                "Checking correct type in 'when'."
-              ],
-              "description": "'When' least upper bound of the types check (when exhaustive via sealed class)."
+              "description": "'When' without bound value and with else branch in the last position."
             }
           }
         }
       }
     },
     "6": {
-      "2": {
+      "1": {
         "diagnostics": {
           "neg": {
             "1": {
-              "cases": [
-                "Checking for not exhaustive 'when' (no branches).",
-                "Checking for not exhaustive 'when' (one branch).",
-                "Checking for not exhaustive 'when' (several branches)."
-              ],
-              "description": "Checking for not exhaustive when without bound value when there is no else branch."
+              "description": "'When' with bound value and empty control structure body."
             },
             "2": {
+              "description": "'When' with bound value and empty 'when condition'."
+            },
+            "3": {
+              "description": "'When' with bound value and with invalid list of the conditions in 'when entry'."
+            },
+            "4": {
               "cases": [
-                "Checking for not exhaustive 'when' (no branches).",
-                "Checking for not exhaustive 'when' (one branch).",
-                "Checking for not exhaustive 'when' (several branches)."
+                {
+                  "description": "'When' with break expression (without label)."
+                },
+                {
+                  "description": "'When' with continue expression (without label)."
+                },
+                {
+                  "description": "'When' with with continue (first) and break (second) expression (without label)."
+                },
+                {
+                  "description": "'When' with with continue (second) and break (first) expression (without label)."
+                }
               ],
-              "description": "Checking for not exhaustive when with bound value when there is no else branch."
+              "description": "'When' with bound value and not allowed break and continue expression (without labels) in the control structure body."
             }
           },
           "pos": {
             "1": {
               "cases": [
-                "Checking for exhaustive 'when' (only 'else' branch).",
-                "Checking for exhaustive 'when' (several value check branches and 'else' branch).",
-                "Checking for exhaustive 'when' (value check branch and 'else' branch)."
+                {
+                  "description": "'When' with control structure body as arithmetic expression with Byte."
+                },
+                {
+                  "description": "'When' with control structure body as arithmetic expression with Double."
+                },
+                {
+                  "description": "'When' with control structure body as arithmetic expression with Float."
+                },
+                {
+                  "description": "'When' with control structure body as arithmetic expression with Int."
+                },
+                {
+                  "description": "'When' with control structure body as arithmetic expression with Long."
+                },
+                {
+                  "description": "'When' with control structure body as arithmetic expression with Short."
+                }
               ],
-              "description": "Check when exhaustive via else entry (when without bound value)."
+              "description": "'When' with different variants of the arithmetic expressions (additive expression and multiplicative expression) in the control structure body."
+            },
+            "2": {
+              "description": "'When' with different variants of the logical expressions in the control structure body."
+            },
+            "3": {
+              "description": "'When' with different variants of the equality expression in the control structure body."
+            },
+            "4": {
+              "description": "'When' with different variants of the comparison expression in the control structure body."
+            },
+            "5": {
+              "description": "'When' with concatenations in the control structure body."
+            },
+            "6": {
+              "description": "'When' with exhaustive when expression in the control structure body."
+            },
+            "7": {
+              "description": "'When' with if expressions in the control structure body."
+            },
+            "8": {
+              "description": "'When' with try expression in the control structure body."
+            },
+            "9": {
+              "description": "'When' with elvis operator expression in the control structure body."
+            },
+            "10": {
+              "description": "'When' with range expression in the control structure body."
+            },
+            "11": {
+              "description": "'When' with cast expression in the control structure body."
+            },
+            "12": {
+              "description": "'When' with prefix operator expression in the control structure body."
+            },
+            "13": {
+              "description": "'When' with postfix operator expression in the control structure body."
+            },
+            "14": {
+              "description": "'When' with indexing expression in the control structure body."
+            },
+            "15": {
+              "description": "'When' with call expression in the control structure body."
+            },
+            "16": {
+              "description": "'When' with property access expression in the control structure body."
+            },
+            "17": {
+              "description": "'When' with fun literal in the control structure body."
+            },
+            "18": {
+              "description": "'When' with lambda literal in the control structure body."
+            },
+            "19": {
+              "description": "'When' with object literal in the control structure body."
+            },
+            "20": {
+              "description": "'When' with this expression in the control structure body."
+            },
+            "21": {
+              "description": "'When' with throw expression in the control structure body."
+            },
+            "22": {
+              "description": "'When' with return expression in the control structure body."
+            },
+            "23": {
+              "description": "'When' with continue expression in the control structure body."
+            },
+            "24": {
+              "description": "'When' with break expression in the control structure body."
+            },
+            "25": {
+              "cases": [
+                {
+                  "description": "'When' with list of Byte with 'else' branch."
+                },
+                {
+                  "description": "'When' with list of Byte."
+                },
+                {
+                  "description": "'When' with list of Char with 'else' branch."
+                },
+                {
+                  "description": "'When' with list of Char."
+                },
+                {
+                  "description": "'When' with list of Double with 'else' branch."
+                },
+                {
+                  "description": "'When' with list of Double."
+                },
+                {
+                  "description": "'When' with list of Float with 'else' branch."
+                },
+                {
+                  "description": "'When' with list of Float."
+                },
+                {
+                  "description": "'When' with list of Integer with 'else' branch."
+                },
+                {
+                  "description": "'When' with list of Integer."
+                },
+                {
+                  "description": "'When' with list of Long with 'else' branch."
+                },
+                {
+                  "description": "'When' with list of Long."
+                },
+                {
+                  "description": "'When' with list of Short with 'else' branch."
+                },
+                {
+                  "description": "'When' with list of Short."
+                },
+                {
+                  "description": "'When' with list of String with 'else' branch."
+                },
+                {
+                  "description": "'When' with list of String."
+                }
+              ],
+              "description": "'When' with bound value and a list of boolean conditions in 'when entry'."
+            }
+          }
+        }
+      }
+    },
+    "7": {
+      "1": {
+        "diagnostics": {
+          "neg": {
+            "1": {
+              "cases": [
+                {
+                  "description": "'When' with Any type test condition."
+                },
+                {
+                  "description": "'When' with Nothing type test condition."
+                },
+                {
+                  "description": "'When' with custom class type test condition."
+                }
+              ],
+              "description": "'When' with bound value and type test condition (without companion object in class), but without type checking operator."
             },
             "2": {
               "cases": [
-                "Checking for exhaustive 'when' (only 'else' branch).",
-                "Checking for exhaustive 'when' (several branches).",
-                "Checking for exhaustive 'when' (value check branch and 'else' branch).",
-                "Checking for exhaustive 'when' with constant bound value (value check branch and 'else' branch)."
+                {
+                  "description": "'When' with one type checking operator."
+                },
+                {
+                  "description": "'When' with two type checking operators."
+                }
               ],
-              "description": "Check when exhaustive via else entry (when with bound value)."
+              "description": "'When' with bound value and type test condition, but missed type in 'when condition'."
             },
             "3": {
               "cases": [
-                "Checking for redundant 'else' branch (all enum values and null value covered).",
-                "Checking for redundant 'else' branch (all enum values covered).",
-                "Checking for redundant 'else' branch (all sealed class subtypes and null value covered).",
-                "Checking for redundant 'else' branch (all sealed class subtypes covered).",
-                "Checking for redundant 'else' branch (both boolean value and null value covered).",
-                "Checking for redundant 'else' branch (both boolean value covered).",
-                "Checking for redundant 'else' branch (sealed class itself and null value covered).",
-                "Checking for redundant 'else' branch (sealed class itself covered).",
-                "Checking for redundant 'else' branch (single enum value and null value covered).",
-                "Checking for redundant 'else' branch (single enum value covered).",
-                "Checking for redundant 'else' branch (single sealed class subtype and null value covered).",
-                "Checking for redundant 'else' branch (single sealed class subtype covered)."
+                {
+                  "description": "'When' with custom object and companion object of class as type checking operator value."
+                },
+                {
+                  "description": "'When' with literals as type checking operator value."
+                },
+                {
+                  "description": "'When' with variables and return value as type checking operator value."
+                }
               ],
-              "description": "Check when exhaustive via else entry (when with bound value, redundant else)."
+              "description": "'When' with bound value and 'when condition' with type checking operator and non-type value."
+            }
+          },
+          "pos": {
+            "1": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch and type test condition on Any."
+                },
+                {
+                  "description": "'When' with 'else' branch and type test condition on Nothing."
+                },
+                {
+                  "description": "'When' with 'else' branch and type test condition on Unit."
+                },
+                {
+                  "description": "'When' with 'else' branch and type test condition on the one basic types (Int)."
+                },
+                {
+                  "description": "'When' with 'else' branch and type test condition on the various basic types."
+                },
+                {
+                  "description": "'When' with type test condition on the one basic types (Int)."
+                },
+                {
+                  "description": "'When' with type test condition on the various basic types."
+                }
+              ],
+              "description": "'When' with bound value and type test condition."
+            },
+            "2": {
+              "cases": [
+                {
+                  "description": "'When' with type test condition on the all possible subtypes of the sealed class and 'else' branch (redundant)."
+                },
+                {
+                  "description": "'When' with type test condition on the all possible subtypes of the sealed class."
+                },
+                {
+                  "description": "'When' with type test condition on the empty sealed class."
+                },
+                {
+                  "description": "'When' with type test condition on the not all possible subtypes of the sealed class and 'else' branch."
+                },
+                {
+                  "description": "'When' with type test condition on the not all possible subtypes of the sealed class."
+                }
+              ],
+              "description": "'When' with bound value and type test condition (with sealed class)."
+            },
+            "3": {
+              "cases": [
+                {
+                  "description": "'When' as expression with direct (in the first position) and invert (in the second position) type checking operators on the same subtype of the sealed class, and 'else' branch."
+                },
+                {
+                  "description": "'When' as expression with direct (in the second position) and invert (in the first position) type checking operators on the same subtype of the sealed class."
+                },
+                {
+                  "description": "'When' as statement with direct (in the second position) and invert (in the first position) type checking operators on the same subtype of the sealed class."
+                },
+                {
+                  "description": "'When' as statement with direct and invert type checking operators on the same subtype of thee sealed class, and 'else' branch."
+                },
+                {
+                  "description": "'When' with direct (in the second position) and invert (in the first position) type checking operators on the same subtype of the sealed class, and 'else' branch (redundant)."
+                },
+                {
+                  "description": "'When' with direct and invert type checking operators on the basic type (String)."
+                },
+                {
+                  "description": "'When' with direct and invert type checking operators on the same subtype of thee sealed class."
+                },
+                {
+                  "description": "'When' with one direct type checking operator on the some subtype of the sealed class, and 'else' branch."
+                },
+                {
+                  "description": "'When' with one invert type checking operator on the some subtype of the sealed class, and 'else' branch."
+                },
+                {
+                  "description": "'When' with three basic types (Int, Boolean, String) covered and all types other than specified covered via invert type checking operator, and 'else' branch."
+                },
+                {
+                  "description": "'When' with three invert type checking operators on the all sybtypes of the sealed class."
+                },
+                {
+                  "description": "'When' with two subtypes of the sealed class covered and all subtypes other than specified covered via invert type checking operator."
+                }
+              ],
+              "description": "'When' with bound value and type test condition (with invert type checking operator)."
+            },
+            "4": {
+              "cases": [
+                {
+                  "description": "'When' with type checking operator on the Nothing typealias, and 'else' branch."
+                },
+                {
+                  "description": "'When' with type checking operator on the one typealias and 'else' branch."
+                },
+                {
+                  "description": "'When' with type checking operator on the one typealias which is equal to the source type, and 'else' branch."
+                },
+                {
+                  "description": "'When' with type checking operator on the one typealias which is not equal to the source type, and 'else' branch."
+                },
+                {
+                  "description": "'When' with type checking operator on the two typealiases (one of which is equal to the source type)."
+                }
+              ],
+              "description": "'When' with bound value and type test condition with type aliases."
             }
           }
         }
       },
-      "4": {
+      "3": {
         "diagnostics": {
           "neg": {
             "1": {
+              "description": "'When' with bound value and 'when condition' with range expression, but without contains operator."
+            },
+            "2": {
               "cases": [
-                "Checking for not exhaustive 'when' on the Boolean value (no branches).",
-                "Checking for not exhaustive 'when' on the Boolean value (with only false branch).",
-                "Checking for not exhaustive 'when' on the Boolean value (with only true branch)."
+                {
+                  "description": "'When' with one contains operator."
+                },
+                {
+                  "description": "'When' with two contains operators."
+                }
               ],
-              "description": "Checking for not exhaustive when when not contains by all Boolean values."
+              "description": "'When' with bound value and 'when condition' with range expression, but without contains operator."
+            },
+            "3": {
+              "cases": [
+                {
+                  "description": "'When' with object of custom class, without defined contains operator."
+                },
+                {
+                  "description": "'When' with object of various basic types (Int, Any, Nothing, Unit, Map — Collection example), without defined contains operator."
+                }
+              ],
+              "description": "'When' with bound value and 'when condition' with contains operator and object without defined contains operator."
             }
           },
           "pos": {
             "1": {
               "cases": [
-                "Checking for exhaustive 'when' (both boolean value as complex expression covered).",
-                "Checking for exhaustive 'when' (both boolean value covered)."
+                {
+                  "description": "'When' with one integer range (not exhaustive)."
+                },
+                {
+                  "description": "'When' with one integer range and 'else' branch (exhaustive)."
+                },
+                {
+                  "description": "'When' with various integer ranges (not exhaustive)."
+                },
+                {
+                  "description": "'When' with various integer ranges and 'else' branch (exhaustive)."
+                }
               ],
-              "description": "Check when exhaustive via boolean bound value and evaluating to value true and false."
+              "description": "'When' with bound value and containment operator with range operator."
+            },
+            "2": {
+              "cases": [
+                {
+                  "description": "'When' with contains operator on the classes with contains operator defined (IntRange), and 'else' branch."
+                },
+                {
+                  "description": "'When' with contains operator on the classes with contains operator defined (IntRange), and 'else' branch."
+                },
+                {
+                  "description": "'When' with contains operator on the classes with contains operator defined (IntRange)."
+                },
+                {
+                  "description": "'When' with contains operator on the classes with contains operator defined (IntRange)."
+                },
+                {
+                  "description": "'When' with contains operator on the classes with contains operator defined (LongRange), and 'else' branch."
+                },
+                {
+                  "description": "'When' with contains operator on the classes with contains operator defined (LongRange)."
+                },
+                {
+                  "description": "'When' with one contains operator on the class with contains operator defined (IntRange), and 'else' branch."
+                },
+                {
+                  "description": "'When' with one contains operator on the class with contains operator defined (IntRange)."
+                }
+              ],
+              "description": "'When' with bound value and containment operator on the classes with contains operator defined."
+            }
+          }
+        }
+      },
+      "5": {
+        "diagnostics": {
+          "neg": {
+            "1": {
+              "cases": [
+                {
+                  "description": "'When' with assignments."
+                },
+                {
+                  "description": "'When' with do-while statement."
+                },
+                {
+                  "description": "'When' with for statement."
+                },
+                {
+                  "description": "'When' with while statement."
+                }
+              ],
+              "description": "'When' with bound value and non-expressions in 'when condition'."
+            },
+            "2": {
+              "cases": [
+                {
+                  "description": "'When' with break expression (without label)."
+                },
+                {
+                  "description": "'When' with continue (first) and break (second) expressions (without label)."
+                },
+                {
+                  "description": "'When' with continue (second) and break (first) expressions (without label)."
+                },
+                {
+                  "description": "'When' with continue expression (without label)."
+                }
+              ],
+              "description": "'When' with bound value and not allowed break and continue expression (without labels) in 'when condition'."
+            }
+          },
+          "pos": {
+            "1": {
+              "cases": [
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression (minus and plus of Integer) with Char, and 'else' branch."
+                },
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression (minus and plus of Integer) with Char."
+                },
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression with Byte, and 'else' branch."
+                },
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression with Byte."
+                },
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression with Double, and 'else' branch."
+                },
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression with Double."
+                },
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression with Float, and 'else' branch."
+                },
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression with Float."
+                },
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression with Int, and 'else' branch."
+                },
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression with Int."
+                },
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression with Long, and 'else' branch."
+                },
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression with Long."
+                },
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression with Short, and 'else' branch."
+                },
+                {
+                  "description": "'When' with 'when condition' as arithmetic expression with Short."
+                }
+              ],
+              "description": "'When' with different variants of the arithmetic expressions (additive expression and multiplicative expression) in 'when condition'."
+            },
+            "2": {
+              "cases": [
+                {
+                  "description": "'When' with complex boolean literals expression in 'when condition', and 'else' branch."
+                },
+                {
+                  "description": "'When' with complex boolean literals expression in 'when condition'."
+                },
+                {
+                  "description": "'When' with complex boolean variables expression in 'when condition', and 'else' branch."
+                },
+                {
+                  "description": "'When' with complex boolean variables expression in 'when condition'."
+                }
+              ],
+              "description": "'When' with bound value and logical expressions in 'when condition'."
+            },
+            "3": {
+              "cases": [
+                {
+                  "description": "'When' as expression with Boolean (literals) equality expressions in 'when condition' and 'else' branch."
+                },
+                {
+                  "description": "'When' as expression with Boolean (literals) equality expressions in 'when condition'."
+                },
+                {
+                  "description": "'When' as expression with Boolean (variables and literals) equality expressions in 'when condition' and 'else' branch."
+                },
+                {
+                  "description": "'When' as statement with Boolean (literals) equality expressions in 'when condition'."
+                },
+                {
+                  "description": "'When' with Char and String equality expressions in 'when condition'."
+                },
+                {
+                  "description": "'When' with boolean equality expression in 'when condition' and 'else' branch."
+                },
+                {
+                  "description": "'When' with boolean equality expression in 'when condition'."
+                },
+                {
+                  "description": "'When' with boolean not equality expression in 'when condition' and 'else' branch."
+                },
+                {
+                  "description": "'When' with boolean not equality expression in 'when condition'."
+                },
+                {
+                  "description": "'When' with numbers (and Char as number) equality expressions in 'when condition'."
+                }
+              ],
+              "description": "'When' with bound value and equality expressions in 'when condition'."
+            },
+            "4": {
+              "cases": [
+                {
+                  "description": "'When' as statement with comparison expression in 'when condition' (literals) and both boolean value covered and 'else' branch (redundant)."
+                },
+                {
+                  "description": "'When' as statement with comparison expression in 'when condition' (literals) and only one boolean value covered and 'else' branch."
+                },
+                {
+                  "description": "'When' as statement with comparison expression in 'when condition' (literals) and only one boolean value covered."
+                },
+                {
+                  "description": "'When' with comparison expression (literals) in 'when condition' and 'else' branch."
+                },
+                {
+                  "description": "'When' with comparison expression (literals) in 'when condition'."
+                },
+                {
+                  "description": "'When' with comparison expression (variables and literals) in 'when condition' and 'else' branch."
+                },
+                {
+                  "description": "'When' with comparison expression (variables and literals) in 'when condition'."
+                }
+              ],
+              "description": "'When' with bound value and comparison expressions in 'when condition'."
+            },
+            "5": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression)."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement)."
+                }
+              ],
+              "description": "'When' with bound value and concatenations in 'when condition'."
+            },
+            "6": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression)."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement)."
+                }
+              ],
+              "description": "'When' with bound value and when expressions in 'when condition'."
+            },
+            "7": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression)."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement)."
+                }
+              ],
+              "description": "'When' with bound value and if expressions in 'when condition'."
+            },
+            "8": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression)."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement)."
+                }
+              ],
+              "description": "'When' with bound value and try expressions in 'when condition'."
+            },
+            "9": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression) and only one entry."
+                },
+                {
+                  "description": "'When' with 'else' branch (as expression) and several entries."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and only one entry."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and several entries."
+                }
+              ],
+              "description": "'When' with bound value and elvis operator expressions in 'when condition'."
+            },
+            "10": {
+              "cases": [
+                {
+                  "description": "'When' with range expressions (Any) and without 'else' branch (as statement)."
+                },
+                {
+                  "description": "'When' with range expressions (IntRange) and 'else' branch (as expression)."
+                },
+                {
+                  "description": "'When' with range expressions (IntRange) and without 'else' branch (as statement)."
+                },
+                {
+                  "description": "'When' with range expressions (LongRange) and without 'else' branch (as statement)."
+                },
+                {
+                  "description": "'When' with range expressions (LongRange) and without 'else' branch (as statement)."
+                }
+              ],
+              "description": "'When' with bound value and range expressions in 'when condition'."
+            },
+            "11": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression)."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement)."
+                }
+              ],
+              "description": "'When' with bound value and cast expressions in 'when condition'."
+            },
+            "12": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression) and increment/decrement operator."
+                },
+                {
+                  "description": "'When' with 'else' branch (as expression) and not operator."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and increment/decrement operator."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and not operator."
+                }
+              ],
+              "description": "'When' with bound value and prefix expressions in 'when condition'."
+            },
+            "13": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression) and increment/decrement operator."
+                },
+                {
+                  "description": "'When' with 'else' branch (as expression) and not-null assertion operator."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and increment/decrement operator."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and not-null assertion operator."
+                }
+              ],
+              "description": "'When' with bound value and postfix operator expressions in 'when condition'."
+            },
+            "14": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression)."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement)."
+                }
+              ],
+              "description": "'When' with bound value and indexing expressions in 'when condition'."
+            },
+            "15": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression)."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement)."
+                }
+              ],
+              "description": "'When' with bound value and call expressions in 'when condition'."
+            },
+            "16": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression)."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement)."
+                }
+              ],
+              "description": "'When' with bound value and property access expressions in 'when condition'."
+            },
+            "17": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression)."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement)."
+                }
+              ],
+              "description": "'When' with bound value and fun literals in 'when condition'."
+            },
+            "18": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression)."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement)."
+                }
+              ],
+              "description": "'When' with bound value and lambda literals in 'when condition'."
+            },
+            "19": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression)."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement)."
+                }
+              ],
+              "description": "'When' with bound value and object literals in 'when condition'."
+            },
+            "20": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression)."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement)."
+                }
+              ],
+              "description": "'When' with bound value and this expression in 'when condition'."
+            },
+            "21": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression) and only one throw expression."
+                },
+                {
+                  "description": "'When' with 'else' branch (as expression) and several throw expressions."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and only one throw expression."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and several throw expressions."
+                }
+              ],
+              "description": "'When' with bound value and throw expression in 'when condition'."
+            },
+            "22": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression) and only one return expression."
+                },
+                {
+                  "description": "'When' with 'else' branch (as expression) and several return expressions."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and only one return expression."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and several throw expressions."
+                }
+              ],
+              "description": "'When' with bound value and return expression in 'when condition'."
+            },
+            "23": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression) and only one continue expression."
+                },
+                {
+                  "description": "'When' with 'else' branch (as expression) and several continue expressions."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and only one continue expression."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and several continue expressions."
+                }
+              ],
+              "description": "'When' with bound value and continue expression in 'when condition'."
+            },
+            "24": {
+              "cases": [
+                {
+                  "description": "'When' with 'else' branch (as expression) and only one break expression."
+                },
+                {
+                  "description": "'When' with 'else' branch (as expression) and several break expressions."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and only one break expression."
+                },
+                {
+                  "description": "'When' without 'else' branch (as statement) and several break expressions."
+                }
+              ],
+              "description": "'When' with bound value and break expression in 'when condition'."
             }
           }
         }
@@ -1089,11 +1178,421 @@
           "neg": {
             "1": {
               "cases": [
-                "Checking for not exhaustive 'when' on the empty sealed class (without subtypes).",
-                "Checking for not exhaustive 'when' on the sealed class (type checking and equality with object).",
-                "Checking for not exhaustive 'when' on the sealed class (type checking).",
-                "Checking for not exhaustive 'when' on the sealed class with one subtype (no branches).",
-                "Checking for not exhaustive 'when' on the sealed class with several subtypes (no branches)."
+                {
+                  "description": "'When' with one not 'else' valid branch and invalid 'else' branch."
+                },
+                {
+                  "description": "'When' with only one invalid 'else' branch."
+                },
+                {
+                  "description": "'When' with only two invalid 'else' branches."
+                },
+                {
+                  "description": "'When' with two not 'else' valid branches and invalid 'else' branch."
+                }
+              ],
+              "description": "'When' with invalid else condition."
+            },
+            "2": {
+              "description": "'When' with bound value and with else branch not in the last position."
+            }
+          },
+          "pos": {
+            "1": {
+              "cases": [
+                {
+                  "description": "Simple when with bound value, with 'else' branch and expression as when condition."
+                },
+                {
+                  "description": "Simple when with bound value, with 'else' branch and range test as when condition."
+                },
+                {
+                  "description": "Simple when with bound value, with 'else' branch and type test as when condition."
+                }
+              ],
+              "description": "'When' with bound value and else branch."
+            }
+          }
+        }
+      }
+    },
+    "8": {
+      "10": {
+        "diagnostics": {
+          "pos": {
+            "1": {
+              "description": "'When' with boolean bound value and true/false checks."
+            }
+          }
+        }
+      }
+    },
+    "9": {
+      "1": {
+        "diagnostics": {
+          "neg": {
+            "1": {
+              "cases": [
+                {
+                  "description": "Checking all types except the Any (implicit cast to any) in 'when' with bound value."
+                },
+                {
+                  "description": "Checking all types except the Any (implicit cast to any) in 'when' without bound value."
+                },
+                {
+                  "description": "Checking all types except the correct one (custom types) in 'when' with bound value."
+                },
+                {
+                  "description": "Checking all types except the correct one (custom types) in 'when' without bound value."
+                },
+                {
+                  "description": "Checking all types except the correct one (numbers) in 'when' with bound value.",
+                  "issues": [
+                    "KT-25268"
+                  ],
+                  "unexpectedBehaviour": true
+                },
+                {
+                  "description": "Checking all types except the correct one (numbers) in 'when' without bound value.",
+                  "issues": [
+                    "KT-25268"
+                  ],
+                  "unexpectedBehaviour": true
+                }
+              ],
+              "description": "'When' least upper bound of the types check (when exhaustive via else branch)."
+            },
+            "2": {
+              "cases": [
+                {
+                  "description": "Checking all types except the Any (implicit cast to any) in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking all types except the Any (implicit cast to any) in 'when'."
+                },
+                {
+                  "description": "Checking all types except the correct one in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking all types except the correct one in 'when'."
+                }
+              ],
+              "description": "'When' least upper bound of the types check (when exhaustive via enum)."
+            },
+            "3": {
+              "cases": [
+                {
+                  "description": "Checking all types except the Any (implicit cast to any) in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking all types except the Any (implicit cast to any) in 'when'."
+                },
+                {
+                  "description": "Checking all types except the correct one in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking all types except the correct one in 'when'."
+                }
+              ],
+              "description": "'When' least upper bound of the types check (when exhaustive via boolean bound value)."
+            },
+            "4": {
+              "cases": [
+                {
+                  "description": "Checking all types except the Any (implicit cast to any) in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking all types except the Any (implicit cast to any) in 'when'."
+                },
+                {
+                  "description": "Checking all types except the correct one in 'when' with 'else' branch."
+                },
+                {
+                  "description": "Checking all types except the correct one in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking all types except the correct one in 'when'."
+                },
+                {
+                  "description": "Checking objects except the Any (implicit cast to any) in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking objects except the Any (implicit cast to any) in 'when'."
+                },
+                {
+                  "description": "Checking objects except the correct one in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking objects except the correct one in 'when'."
+                }
+              ],
+              "description": "'When' least upper bound of the types check (when exhaustive via sealed class)."
+            }
+          },
+          "pos": {
+            "1": {
+              "cases": [
+                {
+                  "description": "Checking Any type (implicit cast to any) in 'when' with bound value."
+                },
+                {
+                  "description": "Checking Any type (implicit cast to any) in 'when' without bound value."
+                },
+                {
+                  "description": "Checking correctness type (custom types) in 'when' with bound value."
+                },
+                {
+                  "description": "Checking correctness type (custom types) in 'when' without bound value."
+                },
+                {
+                  "description": "Checking correctness type (numbers) in 'when' with bound value.",
+                  "issues": [
+                    "KT-25268"
+                  ],
+                  "unexpectedBehaviour": true
+                },
+                {
+                  "description": "Checking correctness type (numbers) in 'when' without bound value.",
+                  "issues": [
+                    "KT-25268"
+                  ],
+                  "unexpectedBehaviour": true
+                }
+              ],
+              "description": "'When' least upper bound of the types check (when exhaustive via else branch)."
+            },
+            "2": {
+              "cases": [
+                {
+                  "description": "Checking Any type (implicit cast to any) in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking Any type (implicit cast to any) in 'when'."
+                },
+                {
+                  "description": "Checking correct type in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking correct type in 'when'."
+                }
+              ],
+              "description": "'When' least upper bound of the types check (when exhaustive via enum)."
+            },
+            "3": {
+              "cases": [
+                {
+                  "description": "Checking Any type (implicit cast to any) in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking Any type (implicit cast to any) in 'when'."
+                },
+                {
+                  "description": "Checking correct type in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking correct type in 'when'."
+                }
+              ],
+              "description": "'When' least upper bound of the types check (when exhaustive via boolean bound value)."
+            },
+            "4": {
+              "cases": [
+                {
+                  "description": "Checking Any type (implicit cast to any) in 'when' (equality with objects)."
+                },
+                {
+                  "description": "Checking Any type (implicit cast to any) in 'when' with null-check branch (equality with objects)."
+                },
+                {
+                  "description": "Checking Any type (implicit cast to any) in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking Any type (implicit cast to any) in 'when'."
+                },
+                {
+                  "description": "Checking correct basic type (Int) in 'when' with."
+                },
+                {
+                  "description": "Checking correct type in 'when' (equality with objects) with null-check branch."
+                },
+                {
+                  "description": "Checking correct type in 'when' (equality with objects)."
+                },
+                {
+                  "description": "Checking correct type in 'when' with null-check branch."
+                },
+                {
+                  "description": "Checking correct type in 'when'."
+                }
+              ],
+              "description": "'When' least upper bound of the types check (when exhaustive via sealed class)."
+            }
+          }
+        }
+      }
+    },
+    "11": {
+      "1": {
+        "diagnostics": {
+          "neg": {
+            "1": {
+              "cases": [
+                {
+                  "description": "Checking for not exhaustive 'when' (no branches)."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' (one branch)."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' (several branches)."
+                }
+              ],
+              "description": "Checking for not exhaustive when without bound value when there is no else branch."
+            },
+            "2": {
+              "cases": [
+                {
+                  "description": "Checking for not exhaustive 'when' (no branches)."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' (one branch)."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' (several branches)."
+                }
+              ],
+              "description": "Checking for not exhaustive when with bound value when there is no else branch."
+            }
+          },
+          "pos": {
+            "1": {
+              "cases": [
+                {
+                  "description": "Checking for exhaustive 'when' (only 'else' branch)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (several value check branches and 'else' branch)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (value check branch and 'else' branch)."
+                }
+              ],
+              "description": "Check when exhaustive via else entry (when without bound value)."
+            },
+            "2": {
+              "cases": [
+                {
+                  "description": "Checking for exhaustive 'when' (only 'else' branch)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (several branches)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (value check branch and 'else' branch)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' with constant bound value (value check branch and 'else' branch)."
+                }
+              ],
+              "description": "Check when exhaustive via else entry (when with bound value)."
+            },
+            "3": {
+              "cases": [
+                {
+                  "description": "Checking for redundant 'else' branch (all enum values and null value covered)."
+                },
+                {
+                  "description": "Checking for redundant 'else' branch (all enum values covered)."
+                },
+                {
+                  "description": "Checking for redundant 'else' branch (all sealed class subtypes and null value covered)."
+                },
+                {
+                  "description": "Checking for redundant 'else' branch (all sealed class subtypes covered)."
+                },
+                {
+                  "description": "Checking for redundant 'else' branch (both boolean value and null value covered)."
+                },
+                {
+                  "description": "Checking for redundant 'else' branch (both boolean value covered)."
+                },
+                {
+                  "description": "Checking for redundant 'else' branch (sealed class itself and null value covered)."
+                },
+                {
+                  "description": "Checking for redundant 'else' branch (sealed class itself covered)."
+                },
+                {
+                  "description": "Checking for redundant 'else' branch (single enum value and null value covered)."
+                },
+                {
+                  "description": "Checking for redundant 'else' branch (single enum value covered)."
+                },
+                {
+                  "description": "Checking for redundant 'else' branch (single sealed class subtype and null value covered)."
+                },
+                {
+                  "description": "Checking for redundant 'else' branch (single sealed class subtype covered)."
+                }
+              ],
+              "description": "Check when exhaustive via else entry (when with bound value, redundant else)."
+            }
+          }
+        }
+      },
+      "3": {
+        "diagnostics": {
+          "neg": {
+            "1": {
+              "cases": [
+                {
+                  "description": "Checking for not exhaustive 'when' on the Boolean value (no branches)."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Boolean value (with only false branch)."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Boolean value (with only true branch)."
+                }
+              ],
+              "description": "Checking for not exhaustive when when not contains by all Boolean values."
+            }
+          },
+          "pos": {
+            "1": {
+              "cases": [
+                {
+                  "description": "Checking for exhaustive 'when' (both boolean value as complex expression covered)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (both boolean value covered)."
+                }
+              ],
+              "description": "Check when exhaustive via boolean bound value and evaluating to value true and false."
+            }
+          }
+        }
+      },
+      "6": {
+        "diagnostics": {
+          "neg": {
+            "1": {
+              "cases": [
+                {
+                  "description": "Checking for not exhaustive 'when' on the empty sealed class (without subtypes)."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the sealed class (type checking and equality with object)."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the sealed class (type checking)."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the sealed class with one subtype (no branches)."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the sealed class with several subtypes (no branches)."
+                }
               ],
               "description": "Checking for not exhaustive when when not covered by all possible subtypes."
             }
@@ -1101,13 +1600,59 @@
           "pos": {
             "1": {
               "cases": [
-                "Checking for exhaustive 'when' (all objects covered using implicit equality operator).",
-                "Checking for exhaustive 'when' (all sealed class subtypes covered).",
-                "Checking for exhaustive 'when' (all sealed class subtypes with methods covered).",
-                "Checking for exhaustive 'when' (single sealed class subtypes covered).",
-                "Checking for exhaustive 'when' on the empty sealed class (without subtypes)."
+                {
+                  "description": "Checking for exhaustive 'when' (all objects covered using implicit equality operator)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (all sealed class subtypes covered)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (all sealed class subtypes with methods covered)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (single sealed class subtypes covered)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' on the empty sealed class (without subtypes)."
+                }
               ],
               "description": "Check when exhaustive when possible subtypes of the sealed class are covered."
+            }
+          }
+        }
+      },
+      "7": {
+        "diagnostics": {
+          "neg": {
+            "1": {
+              "cases": [
+                {
+                  "description": "Checking for not exhaustive 'when' on the Enum (one branch)."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Enum (several branches)."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Enum with one value (no branches)."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Enum with several values (no branches)."
+                }
+              ],
+              "description": "Checking for not exhaustive when when not covered by all enumerated values."
+            }
+          },
+          "pos": {
+            "1": {
+              "cases": [
+                {
+                  "description": "Checking for exhaustive 'when' (all enum values covered)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (single enum value covered)."
+                }
+              ],
+              "description": "Check when exhaustive when all enumerated values are checked."
             }
           }
         }
@@ -1117,54 +1662,58 @@
           "neg": {
             "1": {
               "cases": [
-                "Checking for not exhaustive 'when' on the Enum (one branch).",
-                "Checking for not exhaustive 'when' on the Enum (several branches).",
-                "Checking for not exhaustive 'when' on the Enum with one value (no branches).",
-                "Checking for not exhaustive 'when' on the Enum with several values (no branches)."
-              ],
-              "description": "Checking for not exhaustive when when not covered by all enumerated values."
-            }
-          },
-          "pos": {
-            "1": {
-              "cases": [
-                "Checking for exhaustive 'when' (all enum values covered).",
-                "Checking for exhaustive 'when' (single enum value covered)."
-              ],
-              "description": "Check when exhaustive when all enumerated values are checked."
-            }
-          }
-        }
-      },
-      "9": {
-        "diagnostics": {
-          "neg": {
-            "1": {
-              "cases": [
-                "Checking for not exhaustive 'when' on the Boolean with null-check branch, but all possible values not covered.",
-                "Checking for not exhaustive 'when' on the Boolean without branches.",
-                "Checking for not exhaustive 'when' on the Boolean without null-check branch."
+                {
+                  "description": "Checking for not exhaustive 'when' on the Boolean with null-check branch, but all possible values not covered."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Boolean without branches."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Boolean without null-check branch."
+                }
               ],
               "description": "Checking for not exhaustive when when contains by all Boolean values, bot no null check (or with no null check, but not contains by all Boolean values)."
             },
             "2": {
               "cases": [
-                "Checking for not exhaustive 'when' on the Sealed class with null-check branch, but all possible subtypes not covered.",
-                "Checking for not exhaustive 'when' on the Sealed class with null-check branch, but object not covered.",
-                "Checking for not exhaustive 'when' on the Sealed class without branches.",
-                "Checking for not exhaustive 'when' on the Sealed class without null-check branch and all possible subtypes not covered.",
-                "Checking for not exhaustive 'when' on the Sealed class without null-check branch and only object covered.",
-                "Checking for not exhaustive 'when' on the Sealed class without null-check branch."
+                {
+                  "description": "Checking for not exhaustive 'when' on the Sealed class with null-check branch, but all possible subtypes not covered."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Sealed class with null-check branch, but object not covered."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Sealed class without branches."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Sealed class without null-check branch and all possible subtypes not covered."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Sealed class without null-check branch and only object covered."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Sealed class without null-check branch."
+                }
               ],
               "description": "Checking for not exhaustive when when covered by all possible subtypes, but no null check (or with no null check, but not covered by all possible subtypes)."
             },
             "3": {
               "cases": [
-                "Checking for not exhaustive 'when' on the Enum class (with only one value) with null-check branch, but value not covered.",
-                "Checking for not exhaustive 'when' on the Enum class (with only one value) without null-check branch.",
-                "Checking for not exhaustive 'when' on the Enum class with null-check branch, but all possible values not covered.",
-                "Checking for not exhaustive 'when' on the Enum class without branches.",
-                "Checking for not exhaustive 'when' on the Enum class without null-check branch."
+                {
+                  "description": "Checking for not exhaustive 'when' on the Enum class (with only one value) with null-check branch, but value not covered."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Enum class (with only one value) without null-check branch."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Enum class with null-check branch, but all possible values not covered."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Enum class without branches."
+                },
+                {
+                  "description": "Checking for not exhaustive 'when' on the Enum class without null-check branch."
+                }
               ],
               "description": "Checking for not exhaustive when when covered by all enumerated values, but no null check (or with no null check, but not covered by all enumerated values)."
             }
@@ -1172,24 +1721,40 @@
           "pos": {
             "1": {
               "cases": [
-                "Checking for exhaustive 'when' (both boolean values and null value covered).",
-                "Checking for exhaustive 'when' (both boolean values as complex expressions and null value covered)."
+                {
+                  "description": "Checking for exhaustive 'when' (both boolean values and null value covered)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (both boolean values as complex expressions and null value covered)."
+                }
               ],
               "description": "Check when exhaustive when boolean values are checked and contains a null check."
             },
             "2": {
               "cases": [
-                "Checking for exhaustive 'when' (both enum values and null value covered).",
-                "Checking for exhaustive 'when' (single enum value and null value covered)."
+                {
+                  "description": "Checking for exhaustive 'when' (both enum values and null value covered)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (single enum value and null value covered)."
+                }
               ],
               "description": "Check when exhaustive when enumerated values are checked and contains a null check."
             },
             "3": {
               "cases": [
-                "Checking for exhaustive 'when' (all objects covered using implicit equality operator and null value covered).",
-                "Checking for exhaustive 'when' (all sealed class subtypes and null value covered).",
-                "Checking for exhaustive 'when' (all sealed class with methods subtypes and null value covered).",
-                "Checking for exhaustive 'when' (sealed class itself and null value covered)."
+                {
+                  "description": "Checking for exhaustive 'when' (all objects covered using implicit equality operator and null value covered)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (all sealed class subtypes and null value covered)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (all sealed class with methods subtypes and null value covered)."
+                },
+                {
+                  "description": "Checking for exhaustive 'when' (sealed class itself and null value covered)."
+                }
               ],
               "description": "Check when exhaustive when possible subtypes of the sealed class are covered and contains a null check."
             }

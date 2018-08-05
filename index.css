@@ -335,13 +335,13 @@ body.view-tests-coverage {
     padding: 0 30px;
 }
 
-body.view-tests-coverage .paragraph, body.view-tests-coverage dl, body.view-tests-coverage ul {
+body.view-tests-coverage .paragraph, body.view-tests-coverage > dl, body.view-tests-coverage > ul {
     border: 3px solid rgb(255, 195, 195);
     border-radius: 7px;
-    padding: 10px;
+    padding: 10px 30px;
     box-sizing: border-box;
     width: calc(100% + 26px);
-    margin-left: -13px;
+    margin-left: -33px;
     margin-top: 20px;
 }
 
@@ -350,6 +350,7 @@ body.view-tests-coverage .sentence {
     padding: 0 5px;
     border-right: 3px solid rgba(255, 0, 0, .5);
     border-left: 3px solid rgba(255, 0, 0, .5);
+    margin-right: 5px;
 }
 
 body.view-tests-coverage .sentence .coverage-info {
@@ -396,7 +397,7 @@ body.view-tests-coverage .sentence > .number-info {
     display: inline-block;
 }
 
-body.view-tests-coverage .paragraph > .number-info, body.view-tests-coverage dl > .number-info, body.view-tests-coverage ul > .number-info {
+body.view-tests-coverage .paragraph > .number-info, body.view-tests-coverage > dl > .number-info, body.view-tests-coverage > ul > .number-info {
     position: absolute;
     margin-top: -27px;
     margin-left: -27px;
