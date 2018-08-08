@@ -115,7 +115,7 @@ function showCoverage(specTestsMap) {
         var nextSibling = sectionElement.nextElementSibling;
         var sectionId = sectionElement.attributes.getNamedItem("id").value;
         var paragraphs = specTestsMap[sectionId];
-        var paragraphCounter = 0;
+        var paragraphCounter = 1;
 
         while (nextSibling) {
             var isNewSection = nextSibling.tagName === "H3" || nextSibling.tagName === "H2";
