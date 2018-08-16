@@ -1,3 +1,13 @@
+var testInfoMapPath = "./specTestsMap.json";
+var githubTestsLink = "https://github.com/JetBrains/kotlin/tree/master/";
+
+var testAreas = ["diagnostics", "psi", "codegen"];
+
+// temporary helper map
+var sectionsMap = {
+    "when-expression": "16.30"
+};
+
 function getQueryParam(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
@@ -40,32 +50,79 @@ function highlightSentence(hashComponents) {
     }
 }
 
-function addNumberInfo(sentenceElement, sentenceNumber) {
+function insertNumberInfo(element, elementNumber) {
     var numberInfoSpan = document.createElement("span");
     numberInfoSpan.setAttribute("class", "number-info");
-    numberInfoSpan.innerHTML = sentenceNumber;
-    sentenceElement.insertBefore(numberInfoSpan, sentenceElement.firstChild);
+    numberInfoSpan.innerHTML = elementNumber;
+    element.insertBefore(numberInfoSpan, element.firstChild);
 }
 
-function showSentenceCoverage(sentenceElement, sentenceTestInfo, sentenceNumber) {
-    sentenceElement.style.background = "rgb(213, 236, 206)";
-    sentenceElement.style.borderRadius = "5px";
+function createTestLinkElement(testArea, paragraphNumber, sectionId) {
+    var numberInfoSpan = document.createElement("a");
+    numberInfoSpan.innerHTML = testArea;
+    numberInfoSpan.setAttribute("target", "_blank");
+    numberInfoSpan.setAttribute("href", githubTestsLink + "compiler/tests-spec/testData/" + testArea + "/s-" + sectionsMap[sectionId] + "_" + sectionId + "/p-" + paragraphNumber);
+    return numberInfoSpan
+}
 
-    var testTypes = {"pos": "positive", "neg": "negative"};
-    var testAreas = ["diagnostics", "psi", "codegen"];
+function insertLinksToGithub(paragraph, paragraphNumber, paragraphObject, sectionId) {
+    var testTypesPresented = {};
+    testAreas.forEach(function (testArea) {
+        Object.keys(paragraphObject).forEach(function (sentenceNumber) {
+            if (testArea in paragraphObject[sentenceNumber]) {
+                testTypesPresented[testArea] = true;
+            }
+        });
+    });
 
-    testAreas.forEach(function(testArea) {
-        if (!sentenceTestInfo[testArea]) {
-            sentenceTestInfo[testArea] = {};
+    if (Object.keys(testTypesPresented).length !== 0) {
+        var numberInfoSpan = document.createElement("span");
+        numberInfoSpan.setAttribute("class", "test-links");
+        testAreas.forEach(function (testArea) {
+            if (testTypesPresented[testArea]) {
+                numberInfoSpan.prepend(createTestLinkElement(testArea, paragraphNumber, sectionId))
+            }
+        });
+
+        numberInfoSpan.prepend("Tests: ");
+
+        paragraph.insertBefore(numberInfoSpan, paragraph.firstChild);
+    }
+}
+
+function detectUnexpectedBehaviour(testsOfType) {
+    var unexpectedBehaviour = false;
+    Object.keys(testsOfType).forEach(function (testNumber) {
+        if (testsOfType[testNumber].unexpectedBehaviour) {
+            unexpectedBehaviour = true;
+        }
+        var testCases = testsOfType[testNumber].cases;
+        if (testCases) {
+            testCases.forEach(function (testCase) {
+                if (testCase.unexpectedBehaviour) {
+                    unexpectedBehaviour = true;
+                }
+            });
         }
     });
 
+    return unexpectedBehaviour;
+}
+
+function showSentenceCoverage(sentenceElement, sentenceTestInfo, paragraphElement) {
+    var testTypes = {"pos": "positive", "neg": "negative"};
+
+    sentenceElement.classList.add("covered");
+
     var testsByArea = [];
+    var unexpectedBehaviour = false;
 
     Object.keys(sentenceTestInfo).forEach(function (testArea) {
         var testNumberByType = {};
-        Object.keys(sentenceTestInfo[testArea]).forEach(function (testType) {
-            testNumberByType[testType] = Object.keys(sentenceTestInfo[testArea][testType]).length;
+        var testsOfArea = sentenceTestInfo[testArea];
+        Object.keys(testsOfArea).forEach(function (testType) {
+            testNumberByType[testType] = Object.keys(testsOfArea[testType]).length;
+            unexpectedBehaviour |= detectUnexpectedBehaviour(testsOfArea[testType]);
         });
 
         var testNumberByTypeInfo = [];
@@ -78,54 +135,58 @@ function showSentenceCoverage(sentenceElement, sentenceTestInfo, sentenceNumber)
     });
 
     var coverageInfoSpan = document.createElement("span");
-    coverageInfoSpan.setAttribute("class", "coverage-info");
+    coverageInfoSpan.classList.add("coverage-info");
+    if (unexpectedBehaviour) {
+        var unexpectedBehaviourSpan = document.createElement("span");
+        unexpectedBehaviourSpan.classList.add("unexpected-behaviour-marker");
+        sentenceElement.parentNode.insertBefore(unexpectedBehaviourSpan, sentenceElement);
+        sentenceElement.classList.add("unexpected-behaviour")
+    }
     coverageInfoSpan.innerHTML = testsByArea.join("<br />");
     sentenceElement.prepend(coverageInfoSpan);
-
-    addNumberInfo(sentenceElement, sentenceNumber);
 }
 
-function markSentenceNotCovered(sentenceElement, sentenceNumber) {
-    sentenceElement.style.background = "rgb(255, 195, 195)";
-    sentenceElement.style.borderRadius = "5px";
-
-    addNumberInfo(sentenceElement, sentenceNumber);
-}
-
-function showCoverageProcessParagraph(paragraph, paragraphs, paragraphCounter) {
+function showParagraphCoverage(paragraph, paragraphs, paragraphCounter, sectionId) {
     var sentenceElements = paragraph.querySelectorAll(".sentence");
-    var sentenceObject = paragraphs ? paragraphs[paragraphCounter] : null;
+    var paragraphObject = paragraphs ? paragraphs[paragraphCounter] : null;
     var sentenceCounter = 1;
 
     Array.from(sentenceElements).forEach(function(sentenceElement) {
-        if (sentenceObject && sentenceCounter in sentenceObject) {
-            showSentenceCoverage(sentenceElement, sentenceObject[sentenceCounter], sentenceCounter, paragraphCounter);
-        } else {
-            markSentenceNotCovered(sentenceElement, sentenceCounter);
-        }
+        if (paragraphObject && sentenceCounter in paragraphObject)
+            showSentenceCoverage(sentenceElement, paragraphObject[sentenceCounter], paragraph);
+        insertNumberInfo(sentenceElement, sentenceCounter);
         sentenceCounter++;
     });
-    addNumberInfo(paragraph, paragraphCounter);
+    insertNumberInfo(paragraph, paragraphCounter);
+    if (paragraphObject != null)
+        insertLinksToGithub(paragraph, paragraphCounter, paragraphObject, sectionId);
 }
 
 function showCoverage(specTestsMap) {
-    var sections = document.querySelectorAll("h3");
+    var newSectionTags = ["H1", "H2", "H3"];
+    var paragraphSelector = [".paragraph", "DL", "UL", "OL"].join(",");
+    var sections = document.querySelectorAll(newSectionTags.join(","));
 
     Array.from(sections).forEach(function(sectionElement) {
         var nextSibling = sectionElement.nextElementSibling;
-        var sectionId = sectionElement.attributes.getNamedItem("id").value;
+        var sectionIdObject = sectionElement.attributes.getNamedItem("id");
+
+        if (!sectionIdObject)
+            return;
+
+        var sectionId = sectionIdObject.value;
         var paragraphs = specTestsMap[sectionId];
         var paragraphCounter = 1;
 
         while (nextSibling) {
-            var isNewSection = nextSibling.tagName === "H3" || nextSibling.tagName === "H2";
-            if (isNewSection) break;
+            if (newSectionTags.indexOf(nextSibling.tagName) !== -1)
+                break;
 
-            var isParagraph = nextSibling.classList && (nextSibling.classList.contains("paragraph") || nextSibling.tagName === "DL" || nextSibling.tagName === "UL" || nextSibling.tagName === "OL");
+            var isParagraph = nextSibling.matches(paragraphSelector);
             var childParagraph = nextSibling.querySelector(".paragraph");
 
             if (isParagraph || childParagraph) {
-                showCoverageProcessParagraph(childParagraph || nextSibling, paragraphs, paragraphCounter);
+                showParagraphCoverage(childParagraph || nextSibling, paragraphs, paragraphCounter, sectionId);
                 paragraphCounter++;
             }
             nextSibling = nextSibling.nextElementSibling;
@@ -134,12 +195,11 @@ function showCoverage(specTestsMap) {
 }
 
 window.addEventListener("DOMContentLoaded", function() {
-    if (location.hash) {
+    if (location.hash)
         highlightSentence(location.hash.split(':'));
-    }
 
     if (getQueryParam("mode") === "view_tests_coverage") {
-        loadJSON("./specTestsMap.json", showCoverage);
+        loadJSON(testInfoMapPath, showCoverage);
         document.body.classList.add("view-tests-coverage");
     }
 });
