@@ -2,6 +2,7 @@ var testInfoMapPath = "./specTestsMap.json";
 var githubTestsLink = "https://github.com/JetBrains/kotlin/tree/master/";
 
 var testAreas = ["diagnostics", "psi", "codegen"];
+var paragraphSelector = [".paragraph", "DL", "UL", "OL"].join(",");
 
 // temporary helper map
 var sectionsMap = {
@@ -40,13 +41,13 @@ function highlightSentence(hashComponents) {
     var counter = 1;
 
     while (nextSibling) {
-        if (nextSibling.classList && nextSibling.classList.contains('paragraph') && counter++ == paragraph) {
+        if (nextSibling.matches(paragraphSelector) && counter++ == paragraph) {
             nextSibling.scrollIntoView();
             var sentenceElement = nextSibling.getElementsByClassName('sentence')[sentence - 1];
             sentenceElement.style.backgroundColor = 'yellow';
             break;
         }
-        nextSibling = nextSibling.nextSibling;
+        nextSibling = nextSibling.nextElementSibling;
     }
 }
 
@@ -164,7 +165,6 @@ function showParagraphCoverage(paragraph, paragraphs, paragraphCounter, sectionI
 
 function showCoverage(specTestsMap) {
     var newSectionTags = ["H1", "H2", "H3"];
-    var paragraphSelector = [".paragraph", "DL", "UL", "OL"].join(",");
     var sections = document.querySelectorAll(newSectionTags.join(","));
 
     Array.from(sections).forEach(function(sectionElement) {
