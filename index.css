@@ -331,11 +331,11 @@ table td {
   }
 }
 
-body.view-tests-coverage {
+body.linking-tests {
     padding: 0 30px;
 }
 
-body.view-tests-coverage .paragraph, body.view-tests-coverage > dl, body.view-tests-coverage > ul, body.view-tests-coverage > ol {
+body.linking-tests .paragraph, body.linking-tests > dl, body.linking-tests > ul, body.linking-tests > ol {
     border: 3px solid rgb(255, 195, 195);
     border-radius: 7px;
     padding: 10px 30px;
@@ -346,7 +346,7 @@ body.view-tests-coverage .paragraph, body.view-tests-coverage > dl, body.view-te
     position: relative;
 }
 
-body.view-tests-coverage .sentence {
+body.linking-tests .sentence {
     position: relative;
     padding: 0 5px;
     border-right: 3px solid rgba(255, 0, 0, .5);
@@ -356,11 +356,11 @@ body.view-tests-coverage .sentence {
     border-radius: 5px;
 }
 
-body.view-tests-coverage .sentence.covered {
+body.linking-tests .sentence.covered {
     background: rgb(213, 236, 206);
 }
 
-body.view-tests-coverage .test-links {
+body.linking-tests .test-links {
     text-transform: uppercase;
     right: 5px;
     top: -22px;
@@ -368,11 +368,11 @@ body.view-tests-coverage .test-links {
     position: absolute;
 }
 
-body.view-tests-coverage .test-links a {
+body.linking-tests .test-links a {
     margin-left: 5px;
 }
 
-body.view-tests-coverage .unexpected-behaviour-marker {
+body.linking-tests .unexpected-behaviour-marker {
     color: red;
     position: absolute;
     left: -30px;
@@ -383,12 +383,12 @@ body.view-tests-coverage .unexpected-behaviour-marker {
     margin-top: 5px;
 }
 
-body.view-tests-coverage .sentence.unexpected-behaviour .number-info:before {
+body.linking-tests .sentence.unexpected-behaviour .number-info:before {
     content: "!!! ";
     color: red;
 }
 
-body.view-tests-coverage .sentence .coverage-info {
+body.linking-tests .sentence .coverage-info {
     visibility: hidden;
     width: 350px;
     background-color: #555;
@@ -407,7 +407,7 @@ body.view-tests-coverage .sentence .coverage-info {
     font-weight: bold;
 }
 
-body.view-tests-coverage .sentence .coverage-info::after {
+body.linking-tests .sentence .coverage-info::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -418,12 +418,12 @@ body.view-tests-coverage .sentence .coverage-info::after {
     border-color: #555 transparent transparent transparent;
 }
 
-body.view-tests-coverage .sentence:hover .coverage-info {
+body.linking-tests .sentence:hover .coverage-info {
     visibility: visible;
     opacity: 1;
 }
 
-body.view-tests-coverage .sentence > .number-info {
+body.linking-tests .sentence > .number-info {
     font-weight: bold;
     border-right: 3px solid rgba(255, 0, 0, .5);
     padding: 0px 6px 0px 3px;
@@ -432,7 +432,7 @@ body.view-tests-coverage .sentence > .number-info {
     display: inline-block;
 }
 
-body.view-tests-coverage .paragraph > .number-info, body.view-tests-coverage > dl > .number-info, body.view-tests-coverage > ul > .number-info, body.view-tests-coverage > ol > .number-info {
+body.linking-tests .paragraph > .number-info, body.linking-tests > dl > .number-info, body.linking-tests > ul > .number-info, body.linking-tests > ol > .number-info {
     position: absolute;
     margin-top: -27px;
     margin-left: -27px;
