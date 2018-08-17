@@ -198,8 +198,8 @@ window.addEventListener("DOMContentLoaded", function() {
     if (location.hash)
         highlightSentence(location.hash.split(':'));
 
-    if (getQueryParam("mode") === "linking_tests") {
+    if (getQueryParam("mode") === "tests_linking") {
         loadJSON(testInfoMapPath, showCoverage);
-        document.body.classList.add("linking-tests");
+        document.body.classList.add("tests-linking");
     }
 });

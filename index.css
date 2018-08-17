@@ -331,11 +331,11 @@ table td {
   }
 }
 
-body.linking-tests {
+body.tests-linking {
     padding: 0 30px;
 }
 
-body.linking-tests .paragraph, body.linking-tests > dl, body.linking-tests > ul, body.linking-tests > ol {
+body.tests-linking .paragraph, body.tests-linking > dl, body.tests-linking > ul, body.tests-linking > ol {
     border: 3px solid rgb(255, 195, 195);
     border-radius: 7px;
     padding: 10px 30px;
@@ -346,7 +346,7 @@ body.linking-tests .paragraph, body.linking-tests > dl, body.linking-tests > ul,
     position: relative;
 }
 
-body.linking-tests .sentence {
+body.tests-linking .sentence {
     position: relative;
     padding: 0 5px;
     border-right: 3px solid rgba(255, 0, 0, .5);
@@ -356,11 +356,11 @@ body.linking-tests .sentence {
     border-radius: 5px;
 }
 
-body.linking-tests .sentence.covered {
+body.tests-linking .sentence.covered {
     background: rgb(213, 236, 206);
 }
 
-body.linking-tests .test-links {
+body.tests-linking .test-links {
     text-transform: uppercase;
     right: 5px;
     top: -22px;
@@ -368,11 +368,11 @@ body.linking-tests .test-links {
     position: absolute;
 }
 
-body.linking-tests .test-links a {
+body.tests-linking .test-links a {
     margin-left: 5px;
 }
 
-body.linking-tests .unexpected-behaviour-marker {
+body.tests-linking .unexpected-behaviour-marker {
     color: red;
     position: absolute;
     left: -30px;
@@ -383,12 +383,12 @@ body.linking-tests .unexpected-behaviour-marker {
     margin-top: 5px;
 }
 
-body.linking-tests .sentence.unexpected-behaviour .number-info:before {
+body.tests-linking .sentence.unexpected-behaviour .number-info:before {
     content: "!!! ";
     color: red;
 }
 
-body.linking-tests .sentence .coverage-info {
+body.tests-linking .sentence .coverage-info {
     visibility: hidden;
     width: 350px;
     background-color: #555;
@@ -407,7 +407,7 @@ body.linking-tests .sentence .coverage-info {
     font-weight: bold;
 }
 
-body.linking-tests .sentence .coverage-info::after {
+body.tests-linking .sentence .coverage-info::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -418,12 +418,12 @@ body.linking-tests .sentence .coverage-info::after {
     border-color: #555 transparent transparent transparent;
 }
 
-body.linking-tests .sentence:hover .coverage-info {
+body.tests-linking .sentence:hover .coverage-info {
     visibility: visible;
     opacity: 1;
 }
 
-body.linking-tests .sentence > .number-info {
+body.tests-linking .sentence > .number-info {
     font-weight: bold;
     border-right: 3px solid rgba(255, 0, 0, .5);
     padding: 0px 6px 0px 3px;
@@ -432,7 +432,7 @@ body.linking-tests .sentence > .number-info {
     display: inline-block;
 }
 
-body.linking-tests .paragraph > .number-info, body.linking-tests > dl > .number-info, body.linking-tests > ul > .number-info, body.linking-tests > ol > .number-info {
+body.tests-linking .paragraph > .number-info, body.tests-linking > dl > .number-info, body.tests-linking > ul > .number-info, body.tests-linking > ol > .number-info {
     position: absolute;
     margin-top: -27px;
     margin-left: -27px;
