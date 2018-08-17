@@ -1,4 +1,4 @@
-var testInfoMapPath = "./specTestsMap.json";
+var testInfoMapPath = "./tests-map.json?v=0.3.2";
 var githubTestsLink = "https://github.com/JetBrains/kotlin/tree/master/";
 
 var testAreas = ["diagnostics", "psi", "codegen"];
