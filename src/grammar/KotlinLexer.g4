@@ -1,8 +1,5 @@
 /**
  * Kotlin Lexer Grammar for ANTLR v4
- *
- * Tested on compiler parser tests:
- * https://github.com/JetBrains/kotlin/tree/master/compiler/testData/psi
  */
 
 lexer grammar KotlinLexer;
@@ -40,11 +37,11 @@ RESERVED: '...';
 DOT: '.';
 COMMA: ',';
 LPAREN: '(' -> pushMode(Inside);
-RPAREN: ')' -> popMode;
+RPAREN: ')';
 LSQUARE: '[' -> pushMode(Inside);
-RSQUARE: ']' -> popMode;
+RSQUARE: ']';
 LCURL: '{' -> pushMode(DEFAULT_MODE);
-RCURL: '}' -> popMode;
+RCURL: '}';
 MULT: '*';
 MOD: '%';
 DIV: '/';
@@ -118,6 +115,7 @@ COMPANION: 'companion';
 INIT: 'init'  ;
 THIS: 'this';
 SUPER: 'super';
+TYPEOF: 'typeof';
 WHERE: 'where';
 IF: 'if';
 ELSE: 'else';
@@ -200,10 +198,6 @@ DoubleLiteral
     | DecDigits DoubleExponent
     ;
 
-LongLiteral
-    : (IntegerLiteral | HexLiteral | BinLiteral) 'L'
-    ;
-
 IntegerLiteral
     : DecDigitNoZero DecDigitOrSeparator* DecDigit
     | DecDigit
@@ -223,6 +217,14 @@ fragment BinDigitOrSeparator: BinDigit | '_';
 BinLiteral
     : '0' [bB] BinDigit BinDigitOrSeparator* BinDigit
     | '0' [bB] BinDigit
+    ;
+
+UnsignedLiteral
+    : (IntegerLiteral | HexLiteral | BinLiteral) [uU] 'L'?
+    ;
+
+LongLiteral
+    : (IntegerLiteral | HexLiteral | BinLiteral) 'L'
     ;
 
 BooleanLiteral: 'true'| 'false';
@@ -498,6 +500,7 @@ Inside_CharacterLiteral: CharacterLiteral -> type(CharacterLiteral);
 Inside_RealLiteral: RealLiteral -> type(RealLiteral);
 Inside_NullLiteral: NullLiteral -> type(NullLiteral);
 Inside_LongLiteral: LongLiteral -> type(LongLiteral);
+Inside_UnsignedLiteral: UnsignedLiteral -> type(UnsignedLiteral);
 
 Inside_Identifier: Identifier -> type(Identifier);
 Inside_IdentifierAt: IdentifierAt -> type(IdentifierAt);

@@ -1,8 +1,5 @@
 /**
  * Kotlin Parser Grammar for ANTLR v4
- *
- * Tested on compiler parser tests:
- * https://github.com/JetBrains/kotlin/tree/master/compiler/testData/psi
  */
 
 parser grammar KotlinParser;
@@ -526,6 +523,7 @@ literalConstant
     | RealLiteral
     | NullLiteral
     | LongLiteral
+    | UnsignedLiteral
     ;
 
 stringLiteral
@@ -590,7 +588,7 @@ functionLiteral
     ;
 
 objectLiteral
-    : OBJECT NL* COLON NL* delegationSpecifiers (NL* classBody)?
+    : OBJECT NL* COLON NL* delegationSpecifiers NL* classBody
     | OBJECT NL* classBody
     ;
 
@@ -609,8 +607,12 @@ ifExpression
     | IF NL* LPAREN NL* expression NL* RPAREN NL* (SEMICOLON NL*)? ELSE NL* controlStructureBody
     ;
 
+whenSubject
+    : LPAREN (annotation* NL* VAL NL* variableDeclaration NL* ASSIGNMENT NL*)? expression RPAREN
+    ;
+
 whenExpression
-    : WHEN NL* (LPAREN expression RPAREN)? NL* LCURL NL* (whenEntry NL*)* NL* RCURL
+    : WHEN NL* whenSubject? NL* LCURL NL* (whenEntry NL*)* NL* RCURL
     ;
 
 whenEntry
