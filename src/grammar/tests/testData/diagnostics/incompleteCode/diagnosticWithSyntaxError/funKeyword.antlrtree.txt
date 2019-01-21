@@ -1,0 +1,10 @@
+File: funKeyword.kt (ANTLR_PARSER_ERROR_EXPECTED)
+  packageHeader
+  importList
+  topLevelObject
+    declaration
+      functionDeclaration
+        FUN("fun")
+    semis
+      EOF("<EOF>")
+  EOF("<EOF>")

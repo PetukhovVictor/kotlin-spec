@@ -1,0 +1,12 @@
+File: ProcessingEmptyImport.kt (ANTLR_PARSER_ERROR_EXPECTED)
+  packageHeader
+  importList
+  IMPORT("import")
+  NL("\n")
+  NL("\n")
+  FUN("fun")
+  Identifier("firstFun")
+  LPAREN("(")
+  RPAREN(")")
+  LCURL("{")
+  RCURL("}")

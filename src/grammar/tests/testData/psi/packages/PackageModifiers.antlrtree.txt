@@ -1,0 +1,19 @@
+File: PackageModifiers.kt (ANTLR_PARSER_ERROR_EXPECTED)
+  packageHeader
+  importList
+  topLevelObject
+    declaration
+  topLevelObject
+    declaration
+      PUBLIC("public")
+  topLevelObject
+    declaration
+      AT("@")
+      LSQUARE("[")
+      Identifier("a")
+      RSQUARE("]")
+      PACKAGE("package")
+      Identifier("name")
+    semis
+      EOF("<EOF>")
+  EOF("<EOF>")

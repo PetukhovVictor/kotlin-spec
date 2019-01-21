@@ -1,0 +1,25 @@
+File: DanglingInScript.script.kt (ANTLR_PARSER_ERROR_EXPECTED)
+  packageHeader
+  importList
+  topLevelObject
+    declaration
+      classDeclaration
+        modifiers
+          modifier
+            classModifier
+              ANNOTATION("annotation")
+        CLASS("class")
+        simpleIdentifier
+          Identifier("Ann")
+    semis
+      NL("\n")
+      NL("\n")
+  topLevelObject
+    declaration
+  topLevelObject
+    declaration
+      AT("@")
+      Identifier("Ann")
+    semis
+      EOF("<EOF>")
+  EOF("<EOF>")

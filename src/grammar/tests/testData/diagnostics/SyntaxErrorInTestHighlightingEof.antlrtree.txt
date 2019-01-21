@@ -1,0 +1,15 @@
+File: SyntaxErrorInTestHighlightingEof.kt (ANTLR_PARSER_ERROR_EXPECTED)
+  packageHeader
+  importList
+  topLevelObject
+    declaration
+      functionDeclaration
+        FUN("fun")
+        simpleIdentifier
+          Identifier("f")
+        functionValueParameters
+          LPAREN("(")
+          RPAREN(")")
+  LCURL("{")
+  NL("\n")
+  EOF("<EOF>")
