@@ -75,9 +75,9 @@ File: functionAndVar.kt - 8e4eb291fc2131234a22140431f611c5
                                                   IntegerLiteral("1")
                   NL("\n")
                   setter
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("v")
                     RPAREN(")")

@@ -171,10 +171,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                   functionValueParameters
                     LPAREN("(")
                     functionValueParameter
-                      modifiers
-                        modifier
-                          parameterModifier
-                            VARARG("vararg")
+                      parameterModifiers
+                        parameterModifier
+                          VARARG("vararg")
                       parameter
                         simpleIdentifier
                           Identifier("o")
@@ -543,10 +542,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                   functionValueParameters
                     LPAREN("(")
                     functionValueParameter
-                      modifiers
-                        modifier
-                          parameterModifier
-                            VARARG("vararg")
+                      parameterModifiers
+                        parameterModifier
+                          VARARG("vararg")
                       parameter
                         simpleIdentifier
                           Identifier("n")
@@ -792,7 +790,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                         OPERATOR("operator")
                   FUN("fun")
                   simpleIdentifier
-                    GETTER("get")
+                    GET("get")
                   functionValueParameters
                     LPAREN("(")
                     functionValueParameter
@@ -818,7 +816,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                         OPERATOR("operator")
                   FUN("fun")
                   simpleIdentifier
-                    GETTER("get")
+                    GET("get")
                   functionValueParameters
                     LPAREN("(")
                     functionValueParameter
@@ -856,7 +854,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                         OPERATOR("operator")
                   FUN("fun")
                   simpleIdentifier
-                    GETTER("get")
+                    GET("get")
                   functionValueParameters
                     LPAREN("(")
                     RPAREN(")")
@@ -872,7 +870,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                         OPERATOR("operator")
                   FUN("fun")
                   simpleIdentifier
-                    SETTER("set")
+                    SET("set")
                   functionValueParameters
                     LPAREN("(")
                     functionValueParameter
@@ -910,7 +908,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                         OPERATOR("operator")
                   FUN("fun")
                   simpleIdentifier
-                    SETTER("set")
+                    SET("set")
                   functionValueParameters
                     LPAREN("(")
                     functionValueParameter
@@ -960,7 +958,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                         OPERATOR("operator")
                   FUN("fun")
                   simpleIdentifier
-                    SETTER("set")
+                    SET("set")
                   functionValueParameters
                     LPAREN("(")
                     functionValueParameter
@@ -1055,10 +1053,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                   functionValueParameters
                     LPAREN("(")
                     functionValueParameter
-                      modifiers
-                        modifier
-                          parameterModifier
-                            VARARG("vararg")
+                      parameterModifiers
+                        parameterModifier
+                          VARARG("vararg")
                       parameter
                         simpleIdentifier
                           Identifier("o")
@@ -1396,10 +1393,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                   functionValueParameters
                     LPAREN("(")
                     functionValueParameter
-                      modifiers
-                        modifier
-                          parameterModifier
-                            VARARG("vararg")
+                      parameterModifiers
+                        parameterModifier
+                          VARARG("vararg")
                       parameter
                         simpleIdentifier
                           Identifier("n")
@@ -1893,10 +1889,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                                   RANGLE(">")
                     COMMA(",")
                     functionValueParameter
-                      modifiers
-                        modifier
-                          parameterModifier
-                            VARARG("vararg")
+                      parameterModifiers
+                        parameterModifier
+                          VARARG("vararg")
                       parameter
                         simpleIdentifier
                           Identifier("n")
@@ -2179,10 +2174,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                   functionValueParameters
                     LPAREN("(")
                     functionValueParameter
-                      modifiers
-                        modifier
-                          parameterModifier
-                            VARARG("vararg")
+                      parameterModifiers
+                        parameterModifier
+                          VARARG("vararg")
                       parameter
                         simpleIdentifier
                           Identifier("other")
@@ -2216,10 +2210,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                   functionValueParameters
                     LPAREN("(")
                     functionValueParameter
-                      modifiers
-                        modifier
-                          parameterModifier
-                            VARARG("vararg")
+                      parameterModifiers
+                        parameterModifier
+                          VARARG("vararg")
                       parameter
                         simpleIdentifier
                           Identifier("n")
@@ -2561,10 +2554,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
         functionValueParameters
           LPAREN("(")
           functionValueParameter
-            modifiers
-              modifier
-                parameterModifier
-                  VARARG("vararg")
+            parameterModifiers
+              parameterModifier
+                VARARG("vararg")
             parameter
               simpleIdentifier
                 Identifier("o")
@@ -3077,10 +3069,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
         functionValueParameters
           LPAREN("(")
           functionValueParameter
-            modifiers
-              modifier
-                parameterModifier
-                  VARARG("vararg")
+            parameterModifiers
+              parameterModifier
+                VARARG("vararg")
             parameter
               simpleIdentifier
                 Identifier("n")
@@ -3359,7 +3350,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                   Identifier("Example")
         DOT(".")
         simpleIdentifier
-          GETTER("get")
+          GET("get")
         functionValueParameters
           LPAREN("(")
           functionValueParameter
@@ -3397,7 +3388,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                   Identifier("Example")
         DOT(".")
         simpleIdentifier
-          GETTER("get")
+          GET("get")
         functionValueParameters
           LPAREN("(")
           functionValueParameter
@@ -3447,7 +3438,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                   Identifier("Example")
         DOT(".")
         simpleIdentifier
-          GETTER("get")
+          GET("get")
         functionValueParameters
           LPAREN("(")
           RPAREN(")")
@@ -3475,7 +3466,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                   Identifier("Example")
         DOT(".")
         simpleIdentifier
-          SETTER("set")
+          SET("set")
         functionValueParameters
           LPAREN("(")
           functionValueParameter
@@ -3525,7 +3516,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                   Identifier("Example")
         DOT(".")
         simpleIdentifier
-          SETTER("set")
+          SET("set")
         functionValueParameters
           LPAREN("(")
           functionValueParameter
@@ -3587,7 +3578,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
                   Identifier("Example")
         DOT(".")
         simpleIdentifier
-          SETTER("set")
+          SET("set")
         functionValueParameters
           LPAREN("(")
           functionValueParameter
@@ -3718,10 +3709,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
         functionValueParameters
           LPAREN("(")
           functionValueParameter
-            modifiers
-              modifier
-                parameterModifier
-                  VARARG("vararg")
+            parameterModifiers
+              parameterModifier
+                VARARG("vararg")
             parameter
               simpleIdentifier
                 Identifier("o")
@@ -4203,10 +4193,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
         functionValueParameters
           LPAREN("(")
           functionValueParameter
-            modifiers
-              modifier
-                parameterModifier
-                  VARARG("vararg")
+            parameterModifiers
+              parameterModifier
+                VARARG("vararg")
             parameter
               simpleIdentifier
                 Identifier("n")
@@ -4389,10 +4378,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
         functionValueParameters
           LPAREN("(")
           functionValueParameter
-            modifiers
-              modifier
-                parameterModifier
-                  VARARG("vararg")
+            parameterModifiers
+              parameterModifier
+                VARARG("vararg")
             parameter
               simpleIdentifier
                 Identifier("o")
@@ -4767,10 +4755,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
         functionValueParameters
           LPAREN("(")
           functionValueParameter
-            modifiers
-              modifier
-                parameterModifier
-                  VARARG("vararg")
+            parameterModifiers
+              parameterModifier
+                VARARG("vararg")
             parameter
               simpleIdentifier
                 Identifier("n")
@@ -5007,7 +4994,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
               OPERATOR("operator")
         FUN("fun")
         simpleIdentifier
-          GETTER("get")
+          GET("get")
         functionValueParameters
           LPAREN("(")
           functionValueParameter
@@ -5038,7 +5025,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
               OPERATOR("operator")
         FUN("fun")
         simpleIdentifier
-          GETTER("get")
+          GET("get")
         functionValueParameters
           LPAREN("(")
           functionValueParameter
@@ -5081,7 +5068,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
               OPERATOR("operator")
         FUN("fun")
         simpleIdentifier
-          GETTER("get")
+          GET("get")
         functionValueParameters
           LPAREN("(")
           RPAREN(")")
@@ -5102,7 +5089,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
               OPERATOR("operator")
         FUN("fun")
         simpleIdentifier
-          SETTER("set")
+          SET("set")
         functionValueParameters
           LPAREN("(")
           functionValueParameter
@@ -5145,7 +5132,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
               OPERATOR("operator")
         FUN("fun")
         simpleIdentifier
-          SETTER("set")
+          SET("set")
         functionValueParameters
           LPAREN("(")
           functionValueParameter
@@ -5200,7 +5187,7 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
               OPERATOR("operator")
         FUN("fun")
         simpleIdentifier
-          SETTER("set")
+          SET("set")
         functionValueParameters
           LPAREN("(")
           functionValueParameter
@@ -5310,10 +5297,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
         functionValueParameters
           LPAREN("(")
           functionValueParameter
-            modifiers
-              modifier
-                parameterModifier
-                  VARARG("vararg")
+            parameterModifiers
+              parameterModifier
+                VARARG("vararg")
             parameter
               simpleIdentifier
                 Identifier("o")
@@ -5711,10 +5697,9 @@ File: OperatorChecks.kt - 39f7bbf616551f3f454b681e0bf66b5c
         functionValueParameters
           LPAREN("(")
           functionValueParameter
-            modifiers
-              modifier
-                parameterModifier
-                  VARARG("vararg")
+            parameterModifiers
+              parameterModifier
+                VARARG("vararg")
             parameter
               simpleIdentifier
                 Identifier("n")

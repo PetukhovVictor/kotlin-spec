@@ -55,7 +55,7 @@ File: propertyAccessors.kt - 0b67aca8bd6830687a1e6ac7f6d2fdc4
                                                           QUOTE_CLOSE(""")
                       RPAREN(")")
               NL("\n")
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -199,7 +199,7 @@ File: propertyAccessors.kt - 0b67aca8bd6830687a1e6ac7f6d2fdc4
                                                           QUOTE_CLOSE(""")
                       RPAREN(")")
               NL("\n")
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -225,9 +225,9 @@ File: propertyAccessors.kt - 0b67aca8bd6830687a1e6ac7f6d2fdc4
                                               QUOTE_CLOSE(""")
         NL("\n")
         setter
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("value")
           RPAREN(")")
@@ -255,7 +255,7 @@ File: propertyAccessors.kt - 0b67aca8bd6830687a1e6ac7f6d2fdc4
                     Identifier("String")
         NL("\n")
         getter
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -317,9 +317,9 @@ File: propertyAccessors.kt - 0b67aca8bd6830687a1e6ac7f6d2fdc4
                                                           QUOTE_CLOSE(""")
                       RPAREN(")")
               NL("\n")
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("value")
           RPAREN(")")
@@ -383,7 +383,7 @@ File: propertyAccessors.kt - 0b67aca8bd6830687a1e6ac7f6d2fdc4
                                                           QUOTE_CLOSE(""")
                       RPAREN(")")
               NL("\n")
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -445,9 +445,9 @@ File: propertyAccessors.kt - 0b67aca8bd6830687a1e6ac7f6d2fdc4
                                                           QUOTE_CLOSE(""")
                       RPAREN(")")
               NL("\n")
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("value")
           RPAREN(")")
@@ -511,7 +511,7 @@ File: propertyAccessors.kt - 0b67aca8bd6830687a1e6ac7f6d2fdc4
                     Identifier("String")
         NL("\n")
         getter
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -537,9 +537,9 @@ File: propertyAccessors.kt - 0b67aca8bd6830687a1e6ac7f6d2fdc4
                                               QUOTE_CLOSE(""")
         NL("\n")
         setter
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("value")
           RPAREN(")")
@@ -639,7 +639,7 @@ File: propertyAccessors.kt - 0b67aca8bd6830687a1e6ac7f6d2fdc4
                                                           QUOTE_CLOSE(""")
                       RPAREN(")")
               NL("\n")
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody

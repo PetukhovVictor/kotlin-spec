@@ -446,7 +446,7 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                                                                     QUOTE_OPEN(""")
                                                                     QUOTE_CLOSE(""")
                                 RPAREN(")")
-                    GETTER("get")
+                    GET("get")
             semis
               NL("\n")
           RCURL("}")
@@ -538,7 +538,7 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                                                                     QUOTE_OPEN(""")
                                                                     QUOTE_CLOSE(""")
                                 RPAREN(")")
-                    SETTER("set")
+                    SET("set")
             semis
               NL("\n")
           RCURL("}")
@@ -587,7 +587,7 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                               Identifier("Int")
                   NL("\n")
                   getter
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody
@@ -611,9 +611,9 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                                                       IntegerLiteral("3")
                   NL("\n")
                   setter
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")
@@ -670,7 +670,7 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                               Identifier("Int")
                   NL("\n")
                   getter
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody
@@ -694,9 +694,9 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                                                       IntegerLiteral("3")
                   NL("\n")
                   setter
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")
@@ -754,7 +754,7 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                               Identifier("Int")
                   NL("\n")
                   getter
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody
@@ -778,9 +778,9 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                                                       IntegerLiteral("3")
                   NL("\n")
                   setter
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")
@@ -838,7 +838,7 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                               Identifier("Int")
                   NL("\n")
                   getter
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody
@@ -862,9 +862,9 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                                                       IntegerLiteral("3")
                   NL("\n")
                   setter
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")
@@ -929,7 +929,7 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                               Identifier("Int")
                   NL("\n")
                   getter
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody
@@ -953,9 +953,9 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                                                       IntegerLiteral("3")
                   NL("\n")
                   setter
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")
@@ -1020,7 +1020,7 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                               Identifier("Int")
                   NL("\n")
                   getter
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody
@@ -1044,9 +1044,9 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                                                       IntegerLiteral("3")
                   NL("\n")
                   setter
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")
@@ -1111,7 +1111,7 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                               Identifier("Int")
                   NL("\n")
                   getter
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody
@@ -1135,9 +1135,9 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                                                       IntegerLiteral("3")
                   NL("\n")
                   setter
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")
@@ -1302,7 +1302,7 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                                                                   simpleIdentifier
                                                                     Identifier("ERROR")
                                 RPAREN(")")
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody
@@ -1387,9 +1387,9 @@ File: deprecatedPropertyInheritance.kt - e5102dc957b03937cc1c239a1fb68a80
                                                                   simpleIdentifier
                                                                     Identifier("HIDDEN")
                                 RPAREN(")")
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")

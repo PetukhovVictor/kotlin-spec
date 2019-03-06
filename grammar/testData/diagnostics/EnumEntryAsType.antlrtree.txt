@@ -187,9 +187,9 @@ File: EnumEntryAsType.kt - fa9be07c66a98c118fbb92ef470f19e4
                                                     Identifier("RED")
                   NL("\n")
                   setter
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("arg")
                       COLON(":")

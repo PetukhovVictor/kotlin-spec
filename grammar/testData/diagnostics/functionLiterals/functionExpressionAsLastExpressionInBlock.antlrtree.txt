@@ -105,7 +105,7 @@ File: functionExpressionAsLastExpressionInBlock.kt - d6c6c6adeb5cd84edd648de509b
                                                                 VAL("val")
                                                                 variableDeclaration
                                                                   simpleIdentifier
-                                                                    SETTER("set")
+                                                                    SET("set")
                                                                 ASSIGNMENT("=")
                                                                 expression
                                                                   disjunction
@@ -161,19 +161,18 @@ File: functionExpressionAsLastExpressionInBlock.kt - d6c6c6adeb5cd84edd648de509b
                                                                                           functionLiteral
                                                                                             anonymousFunction
                                                                                               FUN("fun")
-                                                                                              functionValueParameters
+                                                                                              parametersWithOptionalType
                                                                                                 LPAREN("(")
-                                                                                                functionValueParameter
-                                                                                                  parameter
-                                                                                                    simpleIdentifier
-                                                                                                      Identifier("i")
-                                                                                                    COLON(":")
-                                                                                                    type
-                                                                                                      typeReference
-                                                                                                        userType
-                                                                                                          simpleUserType
-                                                                                                            simpleIdentifier
-                                                                                                              Identifier("Int")
+                                                                                                parameterWithOptionalType
+                                                                                                  simpleIdentifier
+                                                                                                    Identifier("i")
+                                                                                                  COLON(":")
+                                                                                                  type
+                                                                                                    typeReference
+                                                                                                      userType
+                                                                                                        simpleUserType
+                                                                                                          simpleIdentifier
+                                                                                                            Identifier("Int")
                                                                                                 RPAREN(")")
                                                                                               functionBody
                                                                                                 block
@@ -197,7 +196,7 @@ File: functionExpressionAsLastExpressionInBlock.kt - d6c6c6adeb5cd84edd648de509b
                                                                                                                                 postfixUnaryExpression
                                                                                                                                   primaryExpression
                                                                                                                                     simpleIdentifier
-                                                                                                                                      SETTER("set")
+                                                                                                                                      SET("set")
                                                                                                                                   postfixUnarySuffix
                                                                                                                                     navigationSuffix
                                                                                                                                       memberAccessOperator

@@ -230,7 +230,7 @@ File: kt1355.kt - 7768d4c235a9f0574c2677e0c0071133
                                                                                         memberAccessOperator
                                                                                           DOT(".")
                                                                                         simpleIdentifier
-                                                                                          SETTER("set")
+                                                                                          SET("set")
                                                                                     postfixUnarySuffix
                                                                                       callSuffix
                                                                                         valueArguments
@@ -523,7 +523,7 @@ File: kt1355.kt - 7768d4c235a9f0574c2677e0c0071133
                           QUEST_NO_WS("?")
                   NL("\n")
                   getter
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody
@@ -572,9 +572,9 @@ File: kt1355.kt - 7768d4c235a9f0574c2677e0c0071133
                                                       RSQUARE("]")
                   NL("\n")
                   setter
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")
@@ -866,7 +866,7 @@ File: kt1355.kt - 7768d4c235a9f0574c2677e0c0071133
                   RANGLE(">")
         DOT(".")
         simpleIdentifier
-          SETTER("set")
+          SET("set")
         functionValueParameters
           LPAREN("(")
           functionValueParameter
@@ -978,10 +978,9 @@ File: kt1355.kt - 7768d4c235a9f0574c2677e0c0071133
         functionValueParameters
           LPAREN("(")
           functionValueParameter
-            modifiers
-              modifier
-                parameterModifier
-                  VARARG("vararg")
+            parameterModifiers
+              parameterModifier
+                VARARG("vararg")
             parameter
               simpleIdentifier
                 Identifier("values")

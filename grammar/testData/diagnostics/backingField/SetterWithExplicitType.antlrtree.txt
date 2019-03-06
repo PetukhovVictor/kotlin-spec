@@ -54,7 +54,7 @@ File: SetterWithExplicitType.kt - 704675c91150945a3473b0b115d871fc
                     Identifier("Int")
         NL("\n")
         getter
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -78,9 +78,9 @@ File: SetterWithExplicitType.kt - 704675c91150945a3473b0b115d871fc
                                             Identifier("x")
         NL("\n")
         setter
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("value")
           RPAREN(")")
@@ -141,7 +141,7 @@ File: SetterWithExplicitType.kt - 704675c91150945a3473b0b115d871fc
                     Identifier("Int")
         NL("\n")
         getter
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -165,9 +165,9 @@ File: SetterWithExplicitType.kt - 704675c91150945a3473b0b115d871fc
                                             Identifier("x")
         NL("\n")
         setter
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("value")
           RPAREN(")")
@@ -248,9 +248,9 @@ File: SetterWithExplicitType.kt - 704675c91150945a3473b0b115d871fc
                                           QUOTE_CLOSE(""")
         NL("\n")
         setter
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("value")
           RPAREN(")")
@@ -270,7 +270,7 @@ File: SetterWithExplicitType.kt - 704675c91150945a3473b0b115d871fc
                   assignment
                     directlyAssignableExpression
                       simpleIdentifier
-                        Identifier("field")
+                        FIELD("field")
                     ASSIGNMENT("=")
                     expression
                       disjunction
@@ -331,9 +331,9 @@ File: SetterWithExplicitType.kt - 704675c91150945a3473b0b115d871fc
                                           QUOTE_CLOSE(""")
         NL("\n")
         setter
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("value")
           RPAREN(")")
@@ -353,7 +353,7 @@ File: SetterWithExplicitType.kt - 704675c91150945a3473b0b115d871fc
                   assignment
                     directlyAssignableExpression
                       simpleIdentifier
-                        Identifier("field")
+                        FIELD("field")
                     ASSIGNMENT("=")
                     expression
                       disjunction

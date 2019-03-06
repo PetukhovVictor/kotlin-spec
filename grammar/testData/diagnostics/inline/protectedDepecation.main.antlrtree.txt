@@ -124,9 +124,9 @@ File: protectedDepecation.main.kt - fc6237f38abba3c67443d642013c6929
                       modifier
                         visibilityModifier
                           PROTECTED("protected")
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")
@@ -1011,9 +1011,9 @@ File: protectedDepecation.main.kt - fc6237f38abba3c67443d642013c6929
                       modifier
                         visibilityModifier
                           PROTECTED("protected")
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")

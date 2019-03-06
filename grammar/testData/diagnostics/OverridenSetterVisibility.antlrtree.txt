@@ -35,7 +35,7 @@ File: OverridenSetterVisibility.kt - 12441df8a65d2fe172720cd2d27bc894
                               Identifier("Int")
                   NL("\n")
                   getter
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody
@@ -59,9 +59,9 @@ File: OverridenSetterVisibility.kt - 12441df8a65d2fe172720cd2d27bc894
                                                       IntegerLiteral("12")
                   NL("\n")
                   setter
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")
@@ -113,7 +113,7 @@ File: OverridenSetterVisibility.kt - 12441df8a65d2fe172720cd2d27bc894
                               Identifier("Int")
                   NL("\n")
                   getter
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody
@@ -137,9 +137,9 @@ File: OverridenSetterVisibility.kt - 12441df8a65d2fe172720cd2d27bc894
                                                       IntegerLiteral("13")
                   NL("\n")
                   setter
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")
@@ -203,7 +203,7 @@ File: OverridenSetterVisibility.kt - 12441df8a65d2fe172720cd2d27bc894
                               Identifier("Int")
                   NL("\n")
                   getter
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody
@@ -231,9 +231,9 @@ File: OverridenSetterVisibility.kt - 12441df8a65d2fe172720cd2d27bc894
                       modifier
                         visibilityModifier
                           PRIVATE("private")
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")
@@ -265,7 +265,7 @@ File: OverridenSetterVisibility.kt - 12441df8a65d2fe172720cd2d27bc894
                               Identifier("Int")
                   NL("\n")
                   getter
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody
@@ -293,9 +293,9 @@ File: OverridenSetterVisibility.kt - 12441df8a65d2fe172720cd2d27bc894
                       modifier
                         visibilityModifier
                           INTERNAL("internal")
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("value")
                     RPAREN(")")

@@ -21,7 +21,7 @@ shebangLine
     ;
 
 fileAnnotation
-    : ANNOTATION_USE_SITE_TARGET_FILE NL* (LSQUARE unescapedAnnotation+ RSQUARE | unescapedAnnotation) NL*
+    : AT FILE NL* COLON NL* (LSQUARE unescapedAnnotation+ RSQUARE | unescapedAnnotation) NL*
     ;
 
 packageHeader
@@ -150,7 +150,7 @@ functionValueParameters
     ;
 
 functionValueParameter
-    : modifiers? parameter (NL* ASSIGNMENT NL* expression)?
+    : parameterModifiers? parameter (NL* ASSIGNMENT NL* expression)?
     ;
 
 functionDeclaration
@@ -190,17 +190,21 @@ propertyDelegate
     ;
 
 getter
-    : modifiers? GETTER
-    | modifiers? GETTER NL* LPAREN NL* RPAREN (NL* COLON NL* type)? NL* functionBody
+    : modifiers? GET
+    | modifiers? GET NL* LPAREN NL* RPAREN (NL* COLON NL* type)? NL* functionBody
     ;
 
 setter
-    : modifiers? SETTER
-    | modifiers? SETTER NL* LPAREN (annotation | parameterModifier)* setterParameter RPAREN (NL* COLON NL* type)? NL* functionBody
+    : modifiers? SET
+    | modifiers? SET NL* LPAREN NL* parameterWithOptionalType NL* RPAREN (NL* COLON NL* type)? NL* functionBody
     ;
 
-setterParameter
-    : simpleIdentifier NL* (COLON NL* type)?
+parametersWithOptionalType
+    : LPAREN NL* (parameterWithOptionalType (NL* COMMA NL* parameterWithOptionalType)*)? NL* RPAREN
+    ;
+
+parameterWithOptionalType
+    : parameterModifiers? simpleIdentifier NL* (COLON NL* type)?
     ;
 
 parameter
@@ -585,7 +589,7 @@ lambdaParameter
 anonymousFunction
     : FUN
     (NL* type NL* DOT)?
-    NL* functionValueParameters
+    NL* parametersWithOptionalType
     (NL* COLON NL* type)?
     (NL* typeConstraints)?
     (NL* functionBody)?
@@ -744,6 +748,10 @@ modifiers
     : (annotation | modifier)+
     ;
 
+parameterModifiers
+    : (annotation | parameterModifier)+
+    ;
+
 modifier
     : (classModifier
     | memberModifier
@@ -849,14 +857,7 @@ multiAnnotation
     ;
 
 annotationUseSiteTarget
-    : ANNOTATION_USE_SITE_TARGET_FIELD
-    | ANNOTATION_USE_SITE_TARGET_PROPERTY
-    | ANNOTATION_USE_SITE_TARGET_GET
-    | ANNOTATION_USE_SITE_TARGET_SET
-    | ANNOTATION_USE_SITE_TARGET_RECEIVER
-    | ANNOTATION_USE_SITE_TARGET_PARAM
-    | ANNOTATION_USE_SITE_TARGET_SETPARAM
-    | ANNOTATION_USE_SITE_TARGET_DELEGATE
+    : AT (FIELD | PROPERTY | GET | SET | RECEIVER | PARAM | SETPARAM | DELEGATE) NL* COLON
     ;
 
 unescapedAnnotation
@@ -880,7 +881,7 @@ simpleIdentifier: Identifier
     | EXTERNAL
     | FINAL
     | FINALLY
-    | GETTER
+    | GET
     | IMPORT
     | INFIX
     | INIT
@@ -899,9 +900,16 @@ simpleIdentifier: Identifier
     | REIFIED
     | SEALED
     | TAILREC
-    | SETTER
+    | SET
     | VARARG
     | WHERE
+    | FIELD
+    | PROPERTY
+    | RECEIVER
+    | PARAM
+    | SETPARAM
+    | DELEGATE
+    | FILE
     | EXPECT
     | ACTUAL
     | CONST

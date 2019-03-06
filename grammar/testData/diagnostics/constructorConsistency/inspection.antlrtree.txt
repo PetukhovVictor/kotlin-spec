@@ -688,9 +688,9 @@ File: inspection.kt - 50d7425543357fb360c48ccca258eb75
                                                     QUOTE_CLOSE(""")
                   NL("\n")
                   setter
-                    SETTER("set")
+                    SET("set")
                     LPAREN("(")
-                    setterParameter
+                    parameterWithOptionalType
                       simpleIdentifier
                         Identifier("arg")
                     RPAREN(")")
@@ -702,7 +702,7 @@ File: inspection.kt - 50d7425543357fb360c48ccca258eb75
                             assignment
                               directlyAssignableExpression
                                 simpleIdentifier
-                                  Identifier("field")
+                                  FIELD("field")
                               ASSIGNMENT("=")
                               expression
                                 disjunction
@@ -789,7 +789,7 @@ File: inspection.kt - 50d7425543357fb360c48ccca258eb75
                               Identifier("String")
                   NL("\n")
                   getter
-                    GETTER("get")
+                    GET("get")
                     LPAREN("(")
                     RPAREN(")")
                     functionBody

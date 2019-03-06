@@ -53,7 +53,7 @@ File: extensionPropertyShadowedByMemberProperty.kt - 0c33be580ebdaf2c66380c30b77
                   simpleIdentifier
                     Identifier("Int")
         getter
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -128,7 +128,7 @@ File: extensionPropertyShadowedByMemberProperty.kt - 0c33be580ebdaf2c66380c30b77
                   simpleIdentifier
                     Identifier("Int")
         getter
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -203,7 +203,7 @@ File: extensionPropertyShadowedByMemberProperty.kt - 0c33be580ebdaf2c66380c30b77
                   simpleIdentifier
                     Identifier("Int")
         getter
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -228,9 +228,9 @@ File: extensionPropertyShadowedByMemberProperty.kt - 0c33be580ebdaf2c66380c30b77
         semi
           SEMICOLON(";")
         setter
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("v")
           RPAREN(")")
@@ -292,7 +292,7 @@ File: extensionPropertyShadowedByMemberProperty.kt - 0c33be580ebdaf2c66380c30b77
                   simpleIdentifier
                     Identifier("Int")
         getter
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -317,9 +317,9 @@ File: extensionPropertyShadowedByMemberProperty.kt - 0c33be580ebdaf2c66380c30b77
         semi
           SEMICOLON(";")
         setter
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("v")
           RPAREN(")")

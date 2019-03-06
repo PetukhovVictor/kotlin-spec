@@ -79,7 +79,7 @@ File: hiddenPropertyAccessors.kt - 2f45691046175a0277bc5bc5b524a9fe
                                                           Identifier("HIDDEN")
                       RPAREN(")")
               NL("\n")
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -275,7 +275,7 @@ File: hiddenPropertyAccessors.kt - 2f45691046175a0277bc5bc5b524a9fe
                                                           Identifier("HIDDEN")
                       RPAREN(")")
               NL("\n")
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -301,9 +301,9 @@ File: hiddenPropertyAccessors.kt - 2f45691046175a0277bc5bc5b524a9fe
                                               QUOTE_CLOSE(""")
         NL("\n")
         setter
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("value")
           RPAREN(")")
@@ -331,7 +331,7 @@ File: hiddenPropertyAccessors.kt - 2f45691046175a0277bc5bc5b524a9fe
                     Identifier("String")
         NL("\n")
         getter
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -419,9 +419,9 @@ File: hiddenPropertyAccessors.kt - 2f45691046175a0277bc5bc5b524a9fe
                                                           Identifier("HIDDEN")
                       RPAREN(")")
               NL("\n")
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("value")
           RPAREN(")")
@@ -511,7 +511,7 @@ File: hiddenPropertyAccessors.kt - 2f45691046175a0277bc5bc5b524a9fe
                                                           Identifier("HIDDEN")
                       RPAREN(")")
               NL("\n")
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -599,9 +599,9 @@ File: hiddenPropertyAccessors.kt - 2f45691046175a0277bc5bc5b524a9fe
                                                           Identifier("HIDDEN")
                       RPAREN(")")
               NL("\n")
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("value")
           RPAREN(")")
@@ -691,7 +691,7 @@ File: hiddenPropertyAccessors.kt - 2f45691046175a0277bc5bc5b524a9fe
                     Identifier("String")
         NL("\n")
         getter
-          GETTER("get")
+          GET("get")
           LPAREN("(")
           RPAREN(")")
           functionBody
@@ -717,9 +717,9 @@ File: hiddenPropertyAccessors.kt - 2f45691046175a0277bc5bc5b524a9fe
                                               QUOTE_CLOSE(""")
         NL("\n")
         setter
-          SETTER("set")
+          SET("set")
           LPAREN("(")
-          setterParameter
+          parameterWithOptionalType
             simpleIdentifier
               Identifier("value")
           RPAREN(")")
