@@ -259,15 +259,15 @@ div.TODO {
 }
 
 span.TODO {
-    border: 2px solid red;
-    position:  absolute;
-    left:  0%;
-    margin-left:  1em;
-    width:  15em;
+  border: 2px solid red;
+  position:  absolute;
+  left:  0%;
+  margin-left:  1em;
+  width:  15em;
 }
 
 span.TODO-marker {
-    color: red
+  color: red
 }
 
 @media only screen and (min-width: 480px) {
@@ -331,11 +331,11 @@ span.TODO-marker {
 
   @page :left {
     margin: 15mm 20mm 15mm 10mm;
-}
+  }
 
   @page :right {
     margin: 15mm 10mm 15mm 20mm;
-}
+  }
 
   p, h2, h3 {
     orphans: 3;
@@ -467,4 +467,12 @@ body.tests-linking .TODO .paragraph {
   border: 0;
   margin: 0;
   width: 100%;
+}
+
+.load-tests-info {
+  position: absolute;
+  margin-top: 20px;
+  margin-left: -40px;
+  width: 20px;
+  height: 20px;
 }
