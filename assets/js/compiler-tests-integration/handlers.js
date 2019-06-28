@@ -7,6 +7,6 @@ $(document).ready(function () {
     $(document.body).on("click", ".next-testcase", function () { SpecTestsViewer.navigateTestCase($(this), "next"); return false; });
     $(document.body).on("click", ".prev-testcase", function () { SpecTestsViewer.navigateTestCase($(this), "prev"); return false; });
     $(document.body).on("click", ".load-tests", function () { SpecTestsLoader.onLoadIconClick($(this)); return false; });
-    $(document.body).on("click", ".set-branch", function () { SpecTestsLoader.onSetBracnhIconClick($(this)); return false; });
+    $(document.body).on("click", ".set-branch", function () { SpecTestsLoader.onSetBranchIconClick($(this)); return false; });
     $(document.body).on("click", ".loaded-tests", function () { return false; });
 })

@@ -254,22 +254,6 @@ table td {
   text-align: center;
 }
 
-div.TODO {
-  border: 2px solid red
-}
-
-span.TODO {
-    border: 2px solid red;
-    position:  absolute;
-    left:  0%;
-    margin-left:  1em;
-    width:  15em;
-}
-
-span.TODO-marker {
-    color: red
-}
-
 @media only screen and (min-width: 480px) {
   body {
     font-size: 14px;
@@ -331,11 +315,11 @@ span.TODO-marker {
 
   @page :left {
     margin: 15mm 20mm 15mm 10mm;
-}
+  }
 
   @page :right {
     margin: 15mm 10mm 15mm 20mm;
-}
+  }
 
   p, h2, h3 {
     orphans: 3;
@@ -358,6 +342,25 @@ span.TODO-marker {
   width: calc(100% + 26px);
   margin-left: -33px;
   margin-top: 20px;
+}
+
+.TODO .with-tests {
+  border: 3px solid red;
+}
+
+div.TODO {
+  background: #ffa4a4;
+  border-radius: 7px;
+  padding: 1px 10px;
+  margin-bottom: 5px;
+}
+
+span.TODO {
+  background-color: #ff9686;
+}
+
+span.TODO-marker {
+  color: red;
 }
 
 .with-tests .sentence {
@@ -463,24 +466,17 @@ span.TODO-marker {
   border: 1px solid #969696;
 }
 
-.with-tests .TODO .paragraph {
-  padding: 0;
-  border: 0;
-  margin: 0;
-  width: 100%;
-}
-
 .set-branch {
-    float: right;
-    font-weight: normal;
-    font-size: 16px;
-    margin-right: 10px;
+  float: right;
+  font-weight: normal;
+  font-size: 16px;
+  margin-right: 10px;
 }
 
 .set-branch img {
-    outline: none;
-    width: 16px;
-    height: 16px;
+  outline: none;
+  width: 16px;
+  height: 16px;
 }
 
 .load-tests, .loaded-tests {
